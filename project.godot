@@ -11,10 +11,15 @@ config_version=5
 [application]
 
 config/name="Kiana"
+run/main_scene="uid://vbrcc2fjxqfg"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[rendering]
+[display]
 
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+window/size/viewport_width=800
+window/size/viewport_height=600
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg")

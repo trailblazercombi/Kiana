@@ -1,0 +1,108 @@
+[gd_scene load_steps=2 format=3 uid="uid://vbrcc2fjxqfg"]
+
+[ext_resource type="Script" uid="uid://bjj15nkuronkk" path="res://src/ProjectWindow/ProjectWindow.gd" id="1_girg3"]
+
+[node name="ProjectWindow" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+script = ExtResource("1_girg3")
+
+[node name="MarginContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Toolbar" type="HSplitContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Left" type="HFlowContainer" parent="MarginContainer/Toolbar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NewProject" type="Button" parent="MarginContainer/Toolbar/Left"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 35)
+layout_mode = 2
+text = "New Project"
+
+[node name="LoadProject" type="Button" parent="MarginContainer/Toolbar/Left"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 35)
+layout_mode = 2
+text = "Load Project"
+
+[node name="SaveProject" type="Button" parent="MarginContainer/Toolbar/Left"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 35)
+layout_mode = 2
+text = "Save Project"
+
+[node name="Right" type="HBoxContainer" parent="MarginContainer/Toolbar"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Credentials" type="Button" parent="MarginContainer/Toolbar/Right"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 35)
+layout_mode = 2
+text = "Credentials"
+
+[node name="TestCases" type="VSplitContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/TestCases"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TestCaseList" type="VBoxContainer" parent="MarginContainer/TestCases/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Buttons" type="HFlowContainer" parent="MarginContainer/TestCases"]
+layout_mode = 2
+
+[node name="TestCaseAdd" type="Button" parent="MarginContainer/TestCases/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 35)
+layout_mode = 2
+text = "New Test Case"
+
+[node name="VSeparator1" type="VSeparator" parent="MarginContainer/TestCases/Buttons"]
+layout_mode = 2
+
+[node name="TestCaseEdit" type="Button" parent="MarginContainer/TestCases/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 35)
+layout_mode = 2
+text = "Edit"
+
+[node name="TestCaseDelete" type="Button" parent="MarginContainer/TestCases/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 35)
+layout_mode = 2
+text = "Delete"
+
+[node name="VSeparator2" type="VSeparator" parent="MarginContainer/TestCases/Buttons"]
+layout_mode = 2
+
+[node name="TestCaseTake" type="Button" parent="MarginContainer/TestCases/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 35)
+layout_mode = 2
+text = "Start Tests"
+
+[node name="TestCaseResults" type="Button" parent="MarginContainer/TestCases/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 35)
+layout_mode = 2
+text = "Results"
