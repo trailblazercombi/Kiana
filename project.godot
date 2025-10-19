@@ -13,6 +13,9 @@ config_version=5
 config/name="Kiana"
 run/main_scene="uid://vbrcc2fjxqfg"
 config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/image="uid://kr6k8fpyiipg"
 config/icon="res://icon.svg"
 
 [display]

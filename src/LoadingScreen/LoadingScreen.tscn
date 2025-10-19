@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0x2bs6a4leip"]
-
-[ext_resource type="Texture2D" uid="uid://ijnhoau5mhyu" path="res://favicon.jpg" id="1_u142h"]
-
-[node name="LoadingScreen" type="Node2D"]
-
-[node name="Favicon" type="Sprite2D" parent="."]
-texture = ExtResource("1_u142h")

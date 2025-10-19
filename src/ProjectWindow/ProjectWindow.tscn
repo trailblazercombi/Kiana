@@ -24,23 +24,11 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="NewProject" type="Button" parent="MarginContainer/Toolbar/Left"]
+[node name="ProjectSwitch" type="Button" parent="MarginContainer/Toolbar/Left"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(120, 35)
+custom_minimum_size = Vector2(180, 35)
 layout_mode = 2
-text = "New Project"
-
-[node name="LoadProject" type="Button" parent="MarginContainer/Toolbar/Left"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(120, 35)
-layout_mode = 2
-text = "Load Project"
-
-[node name="SaveProject" type="Button" parent="MarginContainer/Toolbar/Left"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(120, 35)
-layout_mode = 2
-text = "Save Project"
+text = "Change Project"
 
 [node name="Right" type="HBoxContainer" parent="MarginContainer/Toolbar"]
 layout_mode = 2
