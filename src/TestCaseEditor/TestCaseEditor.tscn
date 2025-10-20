@@ -1,0 +1,120 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqs4ep3spna8s"]
+
+[ext_resource type="Script" uid="uid://bd5f04bdgojq3" path="res://src/TestCaseEditor/TestCaseEditor.gd" id="1_8vj2k"]
+[ext_resource type="PackedScene" uid="uid://l8yk06ij10jt" path="res://src/TestCaseEditor/StepCreateWindow.tscn" id="2_8vj2k"]
+
+[node name="TestCaseEditor" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+script = ExtResource("1_8vj2k")
+
+[node name="Content" type="VSplitContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Content"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="NameBox" type="HBoxContainer" parent="Content/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Content/VBoxContainer/NameBox"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+text = "Test Case"
+
+[node name="TestCaseName" type="LineEdit" parent="Content/VBoxContainer/NameBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="DescBox" type="HBoxContainer" parent="Content/VBoxContainer"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Content/VBoxContainer/DescBox"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+size_flags_vertical = 0
+text = "Description"
+
+[node name="TestCaseDesc" type="TextEdit" parent="Content/VBoxContainer/DescBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StepBox" type="HBoxContainer" parent="Content/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Content/VBoxContainer/StepBox"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+size_flags_vertical = 0
+text = "Steps"
+
+[node name="TestStepBox" type="HSplitContainer" parent="Content/VBoxContainer/StepBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Content/VBoxContainer/StepBox/TestStepBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TestSteps" type="VBoxContainer" parent="Content/VBoxContainer/StepBox/TestStepBox/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Buttons" type="VFlowContainer" parent="Content/VBoxContainer/StepBox/TestStepBox"]
+layout_mode = 2
+
+[node name="AddStep" type="Button" parent="Content/VBoxContainer/StepBox/TestStepBox/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 35)
+layout_mode = 2
+text = "Add Step"
+
+[node name="EditStep" type="Button" parent="Content/VBoxContainer/StepBox/TestStepBox/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 35)
+layout_mode = 2
+text = "Edit Step"
+
+[node name="DeleteStep" type="Button" parent="Content/VBoxContainer/StepBox/TestStepBox/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 35)
+layout_mode = 2
+text = "Delete"
+
+[node name="Buttons" type="VFlowContainer" parent="Content"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Cancel" type="Button" parent="Content/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 35)
+layout_mode = 2
+text = "Cancel"
+
+[node name="Save" type="Button" parent="Content/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 35)
+layout_mode = 2
+text = "Save
+"
+
+[node name="StepCreateWindow" parent="." instance=ExtResource("2_8vj2k")]
+visible = false
+force_native = false

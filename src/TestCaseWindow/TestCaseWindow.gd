@@ -5,7 +5,20 @@ var test_case_queue: Array[TestCase] = []
 var current_test: TestResult
 var current_step: TestStep
 
+var time_elapsed: float = 0
+var time_counting: bool = false
+
+func _process(delta: float) -> void:
+	if time_counting:
+		time_elapsed = time_elapsed + delta
+		var time_int: int = int(time_elapsed)
+		
+		@warning_ignore("integer_division")
+		%TimeElapsed.text = tr(&"%s elapsed") % (tr(&"%02d:%02d:%02d") % [ \
+			time_int / 3600, (time_int % 3600) / 60, time_int % 60])
+
 func _ready() -> void:
+	%TesterName.text = tr(&"Tester: %s") % Global.credentials
 	
 	%EndTesting.disabled = true
 	%NextCase.disabled = true
@@ -16,9 +29,9 @@ func _ready() -> void:
 	%Next.disabled = true
 	
 	%EndTesting.button_down.connect(func() -> void:
-		end_test()
 		%AutoAdvance.disabled = true
-		print("Exit now!")
+		end_test()
+		get_tree().change_scene_to_file("res://src/ProjectWindow/ProjectWindow.tscn")
 	)
 	
 	%NextCase.button_down.connect(func() -> void:
@@ -52,6 +65,7 @@ func _ready() -> void:
 		
 		if %StepActual.text == &"":
 			%StepActual.text = %StepExpect.text
+			%StepActual.text_changed.emit()
 		
 		if (
 			%AutoAdvance.button_pressed 
@@ -118,6 +132,14 @@ func end_test() -> void:
 	for child: Node in %ProgressBar.get_children():
 		%ProgressBar.remove_child(child)
 	
+	Global.open_project.test_results.set(
+		current_test.case,
+		current_test
+	)
+	
+	time_counting = false
+	time_elapsed = 0
+	
 	current_test = null
 
 func start_step(step: TestStep) -> void:
@@ -143,8 +165,11 @@ func start_step(step: TestStep) -> void:
 	%StepPass.disabled = (
 		current_test.step_results.get(current_step) as StepResult
 	).is_passed()
+	
+	time_counting = true
 
 func stop_step() -> void:
+	time_counting = false
 	%StepActual.editable = false
 	%StepFail.disabled = true
 	%StepPass.disabled = true

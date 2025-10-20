@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://vbrcc2fjxqfg"]
+[gd_scene load_steps=3 format=3 uid="uid://vbrcc2fjxqfg"]
 
 [ext_resource type="Script" uid="uid://bjj15nkuronkk" path="res://src/ProjectWindow/ProjectWindow.gd" id="1_girg3"]
+[ext_resource type="PackedScene" uid="uid://efxe4vuligc2" path="res://src/CredentialsWindow/CredentialsWindow.tscn" id="2_4iorw"]
 
 [node name="ProjectWindow" type="MarginContainer"]
 anchors_preset = 15
@@ -16,6 +17,7 @@ script = ExtResource("1_girg3")
 
 [node name="MarginContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
+theme_override_constants/separation = 20
 
 [node name="Toolbar" type="HSplitContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -28,7 +30,7 @@ size_flags_horizontal = 3
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 35)
 layout_mode = 2
-text = "Change Project"
+text = "◀ All Projects"
 
 [node name="Right" type="HBoxContainer" parent="MarginContainer/Toolbar"]
 layout_mode = 2
@@ -39,58 +41,123 @@ size_flags_vertical = 0
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 35)
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Credentials"
 
-[node name="TestCases" type="VSplitContainer" parent="MarginContainer"]
+[node name="ContentTabs" type="TabContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/side_margin = 0
+theme_override_constants/tab_separation = 0
+current_tab = 0
+
+[node name="Project" type="MarginContainer" parent="MarginContainer/ContentTabs"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ContentTabs/Project"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ContentTabs/Project/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/ContentTabs/Project/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+text = "Project Name"
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/ContentTabs/Project/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ContentTabs/Project/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/ContentTabs/Project/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+size_flags_vertical = 0
+text = "Description"
+
+[node name="LineEdit" type="TextEdit" parent="MarginContainer/ContentTabs/Project/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Tests" type="MarginContainer" parent="MarginContainer/ContentTabs"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_tab_index = 1
+
+[node name="TestCases" type="VSplitContainer" parent="MarginContainer/ContentTabs/Tests"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/TestCases"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/ContentTabs/Tests/TestCases"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="TestCaseList" type="VBoxContainer" parent="MarginContainer/TestCases/ScrollContainer"]
+[node name="TestCaseList" type="VBoxContainer" parent="MarginContainer/ContentTabs/Tests/TestCases/ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Buttons" type="HFlowContainer" parent="MarginContainer/TestCases"]
+[node name="Buttons" type="HFlowContainer" parent="MarginContainer/ContentTabs/Tests/TestCases"]
 layout_mode = 2
 
-[node name="TestCaseAdd" type="Button" parent="MarginContainer/TestCases/Buttons"]
+[node name="TestCaseAdd" type="Button" parent="MarginContainer/ContentTabs/Tests/TestCases/Buttons"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 35)
 layout_mode = 2
 text = "New Test Case"
 
-[node name="VSeparator1" type="VSeparator" parent="MarginContainer/TestCases/Buttons"]
-layout_mode = 2
-
-[node name="TestCaseEdit" type="Button" parent="MarginContainer/TestCases/Buttons"]
+[node name="TestCaseEdit" type="Button" parent="MarginContainer/ContentTabs/Tests/TestCases/Buttons"]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(96, 35)
 layout_mode = 2
+disabled = true
 text = "Edit"
 
-[node name="TestCaseDelete" type="Button" parent="MarginContainer/TestCases/Buttons"]
+[node name="TestCaseDelete" type="Button" parent="MarginContainer/ContentTabs/Tests/TestCases/Buttons"]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(96, 35)
 layout_mode = 2
+disabled = true
 text = "Delete"
 
-[node name="VSeparator2" type="VSeparator" parent="MarginContainer/TestCases/Buttons"]
-layout_mode = 2
-
-[node name="TestCaseTake" type="Button" parent="MarginContainer/TestCases/Buttons"]
+[node name="TestCaseResults" type="Button" parent="MarginContainer/ContentTabs/Tests/TestCases/Buttons"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(96, 35)
 layout_mode = 2
-text = "Start Tests"
-
-[node name="TestCaseResults" type="Button" parent="MarginContainer/TestCases/Buttons"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(96, 35)
-layout_mode = 2
+disabled = true
 text = "Results"
+
+[node name="TestCaseTake" type="Button" parent="MarginContainer/ContentTabs/Tests/TestCases/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 35)
+layout_mode = 2
+text = "Begin Testing"
+
+[node name="Reports" type="MarginContainer" parent="MarginContainer/ContentTabs"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="CredentialsWindow" parent="." instance=ExtResource("2_4iorw")]
+initial_position = 2
+visible = false
+force_native = true

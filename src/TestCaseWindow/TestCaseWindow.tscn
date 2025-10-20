@@ -124,6 +124,7 @@ size_flags_horizontal = 8
 
 [node name="AutoAdvance" type="CheckButton" parent="ProjectWindow/TestContent/StepContent/HSplitContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Auto-advance to next step"
