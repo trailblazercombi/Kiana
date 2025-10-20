@@ -1,6 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpm6h2k18n4vg"]
-
-[ext_resource type="Script" uid="uid://dln3bmblcjmaj" path="res://src/TestCaseWindow/TestCaseWindow.gd" id="1_8fswb"]
+[gd_scene load_steps=3 format=3 uid="uid://cpm6h2k18n4vg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fswb"]
 bg_color = Color(0.972549, 0.19215687, 0.18431373, 1)
@@ -14,11 +12,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-script = ExtResource("1_8fswb")
 
 [node name="ProjectWindow" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -121,13 +114,6 @@ layout_mode = 2
 [node name="HSplitContainer" type="HBoxContainer" parent="ProjectWindow/TestContent/StepContent"]
 layout_mode = 2
 size_flags_horizontal = 8
-
-[node name="AutoAdvance" type="CheckButton" parent="ProjectWindow/TestContent/StepContent/HSplitContainer"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-theme_override_font_sizes/font_size = 12
-text = "Auto-advance to next step"
 
 [node name="StepFail" type="Button" parent="ProjectWindow/TestContent/StepContent/HSplitContainer"]
 unique_name_in_owner = true

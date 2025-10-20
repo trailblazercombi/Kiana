@@ -11,28 +11,21 @@ config_version=5
 [application]
 
 config/name="Kiana"
-run/main_scene="uid://dhbfjbj3srg1o"
+run/main_scene="uid://vbrcc2fjxqfg"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/image="uid://kr6k8fpyiipg"
 config/icon="res://icon.svg"
 
-[autoload]
-
-Global="*res://src/Global.gd"
-
 [display]
 
 window/size/viewport_width=800
 window/size/viewport_height=600
 
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg")
-
 [file_customization]
 
 folder_colors={
+"res://data/": "pink",
 "res://debug_data/": "pink"
 }

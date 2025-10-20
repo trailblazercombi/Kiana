@@ -1,6 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://sgn3bcs3bfa0"]
-
-[ext_resource type="Script" uid="uid://b4frc8kgqvsjr" path="res://src/ProjectWindow/TestCaseEntry.gd" id="1_yijkt"]
+[gd_scene format=3 uid="uid://sgn3bcs3bfa0"]
 
 [node name="TestCaseEntry" type="MarginContainer"]
 offset_right = 240.0
@@ -9,25 +7,41 @@ theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
-script = ExtResource("1_yijkt")
 
-[node name="TestCaseData" type="VBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
+
+[node name="TestCaseData" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/separation = 10
 
-[node name="HSplitContainer" type="HSplitContainer" parent="TestCaseData"]
+[node name="HeaderLine" type="HBoxContainer" parent="HBoxContainer/TestCaseData"]
 layout_mode = 2
 
-[node name="TestCaseSelected" type="CheckBox" parent="TestCaseData/HSplitContainer"]
+[node name="TestCaseSelected" type="CheckBox" parent="HBoxContainer/TestCaseData/HeaderLine"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="TestCaseName" type="Label" parent="TestCaseData/HSplitContainer"]
+[node name="TestCaseName" type="Label" parent="HBoxContainer/TestCaseData/HeaderLine"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Name of the Test Case"
 
-[node name="TestCaseDescription" type="Label" parent="TestCaseData"]
+[node name="TestCaseEdit" type="Button" parent="HBoxContainer/TestCaseData/HeaderLine"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "Edit"
+
+[node name="TestCaseResults" type="Button" parent="HBoxContainer/TestCaseData/HeaderLine"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "Results"
+
+[node name="TestCaseDescription" type="Label" parent="HBoxContainer/TestCaseData"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
@@ -35,3 +49,6 @@ theme_override_font_sizes/font_size = 14
 text = "Description of the Test Case. This description can be extremely long. It will however get truncated  Description Description of the Test Case. This description can be extremely long. It will however get truncated  Description Description of the Test Case. This description can be extremely long. It will however get truncated  Description Description of the Test Case. This description can be extremely long. It will however get truncated  Description Description of the Test Case. This description can be extremely long. It will however get truncated  Description Description of the Test Case. This description can be extremely long. It will however get truncated  Description Description of the Test Case. This description can be extremely long. It will however get truncated  Description Description of the Test Case. This description can be extremely long. It will however get truncated  Description Description of the Test Case. This description can be extremely long. It will however get truncated  Description Description of the Test Case. This description can be extremely long. It will however get truncated  Description"
 autowrap_mode = 3
 max_lines_visible = 3
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/TestCaseData"]
+layout_mode = 2

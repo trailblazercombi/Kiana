@@ -1,17 +1,28 @@
 [gd_scene load_steps=2 format=3 uid="uid://l8yk06ij10jt"]
 
-[ext_resource type="Script" uid="uid://dujtjn5wvfvts" path="res://src/TestCaseEditor/StepCreateWindow.gd" id="1_p583m"]
+[sub_resource type="GDScript" id="GDScript_vawni"]
+script/source = "class_name StepCreateWindow extends Window
+
+func _ready() -> void:
+	%Cancel.button_down.connect(func() -> void:
+		hide()
+	)
+	
+	%Save.button_down.connect(func() -> void:
+		hide()
+	)
+"
 
 [node name="StepCreateWindow" type="Window"]
 oversampling_override = 1.0
-position = Vector2i(0, 36)
+title = "Test Case Step"
+initial_position = 2
 size = Vector2i(600, 300)
 transient = true
 transient_to_focused = true
 minimize_disabled = true
 maximize_disabled = true
-force_native = true
-script = ExtResource("1_p583m")
+script = SubResource("GDScript_vawni")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
