@@ -19,3 +19,6 @@ func _ready() -> void:
 	%ProjectDescription.text_changed.connect(func() -> void:
 		Global.project.description = %ProjectDescription.text
 	)
+	
+	for test_case: TestCase in Global.project.get_test_cases():
+		%TestCaseList.add_child(null)

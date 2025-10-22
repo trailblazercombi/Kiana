@@ -1,5 +1,12 @@
 extends Node
 
+const FILE_EXTENSION = &".kiana"
+const PROJECT_MIME = &"project.%s" % FILE_EXTENSION
+const TEST_CASE_MIME = &"case.%s" % FILE_EXTENSION
+const TEST_RESULT_MIME = &"result.%s" % FILE_EXTENSION
+
+var dir: String
+
 enum Status {
 	PASSED,
 	FAILED,
@@ -85,7 +92,7 @@ var credentials: Credentials = Credentials.new()
 #endregion
 #region Project file Reading and Writing
 
-func open_project() -> void:
+func open_project() -> bool:
 	show_throbber(tr(&"Opening project..."))
 	var flg: FileDialog = FileDialog.new()
 	flg.transient = true
@@ -93,14 +100,17 @@ func open_project() -> void:
 	flg.size = Vector2i(900, 600)
 	flg.file_mode = FileDialog.FILE_MODE_OPEN_FILE
 	flg.access = FileDialog.ACCESS_FILESYSTEM
-	flg.add_filter("*.kiana")
-	flg.force_native = true
+	flg.add_filter("project.kiana")
+	flg.use_native_dialog = true
 	
 	add_child(flg)
 	flg.popup_centered()
 		
-	flg.file_selected.connect(func(file_path: String) -> void:
-		project = Project.new(file_path), CONNECT_ONE_SHOT
+	flg.file_selected.connect(
+		func(file_path: String) -> void:
+			project = Project.new(file_path)
+			show_throbber(&"Opening %s" % file_path), 
+		CONNECT_ONE_SHOT
 	)
 	
 	flg.close_requested.connect(func() -> void:
@@ -114,10 +124,16 @@ func open_project() -> void:
 	)
 	
 	await flg.file_selected
-	hide_throbber()
 	flg.queue_free()
+	
+	if await project.open_success():
+		hide_throbber()
+		return true
+	else:
+		hide_throbber()
+		return false
 
-func create_project() -> void:
+func create_project() -> bool:
 	show_throbber(tr(&"Creating project..."))
 	var flg: FileDialog = FileDialog.new()
 	flg.transient = true
@@ -125,24 +141,13 @@ func create_project() -> void:
 	flg.size = Vector2i(900, 600)
 	flg.file_mode = FileDialog.FILE_MODE_OPEN_DIR
 	flg.access = FileDialog.ACCESS_FILESYSTEM
-	flg.force_native = true
+	flg.use_native_dialog = true
 	
 	add_child(flg)
 	flg.popup_centered()
 	
-	flg.dir_selected.connect(func(dir: String) -> void:
-		var dir_access := DirAccess.open(dir)
-		print(dir_access)
-		if dir_access.file_exists(&"project.kiana"):
-			var error := AcceptDialog.new()
-			error.dialog_close_on_escape = true
-			error.dialog_text = tr(&"A project already exists here.")
-			error.dialog_hide_on_ok = true
-			error.add_button(tr(&"Confirm"), true, &"ok")
-			error.custom_action.connect(create_project, CONNECT_ONE_SHOT)
-			error.popup_centered()
-		else:
-			project = Project.new(dir),
+	flg.dir_selected.connect(func(the_dir: String) -> void:
+		dir = the_dir,
 		CONNECT_ONE_SHOT
 	)
 	
@@ -157,8 +162,20 @@ func create_project() -> void:
 	)
 	
 	await flg.dir_selected
-	hide_throbber()
-	flg.queue_free()
+	var dir_access: DirAccess = DirAccess.open(dir)
+	if dir_access.file_exists(&"project.kiana"):
+		popup_error(
+			&"A project already exists here.",
+			func() -> void: 
+				hide_throbber()
+				create_project()
+		)
+		return false
+	else:
+		project = Project.new(dir)
+		hide_throbber()
+		flg.queue_free()
+		return true
 
 func edit_credentials() -> void:
 	show_throbber(tr(&"Editing credentials..."))
@@ -186,5 +203,19 @@ func show_throbber(message: StringName) -> void:
 
 func hide_throbber() -> void:
 	_throbber.hide()
+
+func popup_error(message: StringName, ok_action: Callable) -> void:
+	var error := AcceptDialog.new()
+	error.dialog_close_on_escape = true
+	error.dialog_text = tr(message)
+	error.dialog_hide_on_ok = true
+	error.force_native = true
+	error.confirmed.connect(ok_action, CONNECT_ONE_SHOT)
+	
+	get_tree().root.add_child(error)
+	error.popup_centered()
+
+func quit() -> void:
+	get_tree().quit()
 
 #endregion

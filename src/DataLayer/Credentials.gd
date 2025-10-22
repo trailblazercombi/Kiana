@@ -4,7 +4,8 @@ const PATH = "user://credentials.kiana"
 
 static func DEFAULT() -> Dictionary:
 	return {
-		"tester_name" = "Unnamed Tester"
+		"tester_name" = &"Unnamed Tester",
+		"system_info" = &""
 	}
 
 var kiana_file: Dictionary
@@ -23,3 +24,7 @@ func _init() -> void:
 func save_to_disk() -> void:
 	var file := FileAccess.open(PATH, FileAccess.WRITE)
 	file.store_string(JSON.stringify(kiana_file, &"\t"))
+	file.close()
+
+func get_json_dict() -> Dictionary:
+	return kiana_file.merged({ "system_info" = Global.get_system_info() }, true)
