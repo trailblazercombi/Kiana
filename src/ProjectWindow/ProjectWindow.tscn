@@ -84,6 +84,21 @@ text = "Description"
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+wrap_mode = 1
+
+[node name="TabCheck" type="HBoxContainer" parent="MarginContainer/ContentTabs/Project/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/ContentTabs/Project/VBoxContainer/TabCheck"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="TabCheck" type="CheckBox" parent="MarginContainer/ContentTabs/Project/VBoxContainer/TabCheck"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Next time, open the project on \"Tests\" tab"
 
 [node name="Metrics" type="HBoxContainer" parent="MarginContainer/ContentTabs/Project/VBoxContainer"]
 layout_mode = 2

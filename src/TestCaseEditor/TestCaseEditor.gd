@@ -14,8 +14,8 @@ func _ready() -> void:
 		test_case.title = text
 	)
 	
-	%TestCaseDescription.text_changed.connect(func(text: String) -> void:
-		test_case.description = text
+	%TestCaseDescription.text_changed.connect(func() -> void:
+		test_case.description = %TestCaseDescription.text
 	)
 	
 	for test_step: Dictionary in test_case.get_all_steps():

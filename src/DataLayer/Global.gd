@@ -110,10 +110,9 @@ func open_project() -> bool:
 	add_child(flg)
 	flg.popup_centered()
 		
-	flg.file_selected.connect(
-		func(file_path: String) -> void:
-			project = Project.new(file_path)
-			show_throbber(&"Opening %s" % file_path), 
+	flg.file_selected.connect(func(file: String) -> void:
+		credentials.add_to_recents(file)
+		load_project(file),
 		CONNECT_ONE_SHOT
 	)
 	
@@ -136,6 +135,11 @@ func open_project() -> bool:
 	else:
 		hide_throbber()
 		return false
+
+func load_project(file_path: String) -> void:
+		show_throbber(tr(&"Opening %s" % file_path))
+		project = Project.new(file_path)
+		await project.open_success()
 
 func create_project() -> bool:
 	show_throbber(tr(&"Creating project..."))
@@ -179,6 +183,7 @@ func create_project() -> bool:
 		project = Project.new(dir)
 		hide_throbber()
 		flg.queue_free()
+		credentials.add_to_recents(&"%sproject.kiana" % dir)
 		return true
 
 func edit_credentials() -> void:

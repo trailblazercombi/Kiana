@@ -107,6 +107,7 @@ text = "Actual result:"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
+wrap_mode = 1
 
 [node name="HSeparator3" type="HSeparator" parent="ProjectWindow/TestContent/StepContent"]
 layout_mode = 2

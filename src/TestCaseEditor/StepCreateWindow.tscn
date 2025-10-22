@@ -44,6 +44,7 @@ text = "Action"
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+wrap_mode = 1
 
 [node name="ExpectBox" type="HBoxContainer" parent="MarginContainer/VSplitContainer/Content"]
 layout_mode = 2
@@ -60,6 +61,7 @@ Result"
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+wrap_mode = 1
 
 [node name="Buttons" type="VFlowContainer" parent="MarginContainer/VSplitContainer"]
 layout_mode = 2

@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxsivs3oj7ss3"]
+
+[ext_resource type="Script" uid="uid://dkwb30wf2wi1f" path="res://src/ProjectSelect/RecentEntry.gd" id="1_bl2ht"]
+
+[node name="RecentEntry" type="HBoxContainer"]
+offset_right = 564.0
+offset_bottom = 23.0
+script = ExtResource("1_bl2ht")
+
+[node name="Path" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "<path>"
+
+[node name="Load" type="Button" parent="."]
+custom_minimum_size = Vector2(90, 35)
+layout_mode = 2
+text = "Load"
+
+[node name="Remove" type="Button" parent="."]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+text = "×"
