@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://do0oggnfnnwdc"]
+
+[node name="TestResultStepEntry" type="FoldableContainer"]
+offset_right = 638.0
+offset_bottom = 1396.0
+folded = true
+title = "✅ Step <number> <passed>"
+
+[node name="Content" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="ActionBox" type="HSplitContainer" parent="Content"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Content/ActionBox"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+size_flags_vertical = 0
+text = "Action"
+
+[node name="Action" type="Label" parent="Content/ActionBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "<action>"
+autowrap_mode = 3
+
+[node name="HSeparator3" type="HSeparator" parent="Content"]
+layout_mode = 2
+
+[node name="ExpectBox" type="HSplitContainer" parent="Content"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Content/ExpectBox"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+size_flags_vertical = 0
+text = "Expected
+Result"
+
+[node name="ExpectedResult" type="Label" parent="Content/ExpectBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "<action>"
+autowrap_mode = 3
+
+[node name="HSeparator2" type="HSeparator" parent="Content"]
+layout_mode = 2
+
+[node name="ActualBox" type="HSplitContainer" parent="Content"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Content/ActualBox"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+size_flags_vertical = 0
+text = "Actual
+Result"
+
+[node name="ActualResult" type="Label" parent="Content/ActualBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "<action>"
+autowrap_mode = 3
+
+[node name="HSeparator" type="HSeparator" parent="Content"]
+layout_mode = 2

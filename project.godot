@@ -11,12 +11,16 @@ config_version=5
 [application]
 
 config/name="Kiana"
-run/main_scene="uid://vbrcc2fjxqfg"
+run/main_scene="uid://dhbfjbj3srg1o"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/image="uid://kr6k8fpyiipg"
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://src/DataLayer/Global.gd"
 
 [display]
 
@@ -27,5 +31,6 @@ window/size/viewport_height=600
 
 folder_colors={
 "res://data/": "pink",
-"res://debug_data/": "pink"
+"res://debug_data/": "pink",
+"res://src/DataLayer/": "teal"
 }

@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cq6vfa2j0414y"]
-
-[ext_resource type="Script" uid="uid://lxflls476dvw" path="res://src/Data/StepResult.gd" id="1_4vsdo"]
-
-[node name="StepResult" type="Label"]
-offset_right = 22.0
-offset_bottom = 23.0
-text = "🔳"
-script = ExtResource("1_4vsdo")

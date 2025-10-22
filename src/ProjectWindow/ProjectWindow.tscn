@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://vbrcc2fjxqfg"]
+[gd_scene load_steps=3 format=3 uid="uid://vbrcc2fjxqfg"]
 
+[ext_resource type="Script" uid="uid://bjj15nkuronkk" path="res://src/ProjectWindow/ProjectWindow.gd" id="1_4iorw"]
 [ext_resource type="PackedScene" uid="uid://efxe4vuligc2" path="res://src/CredentialsWindow/CredentialsWindow.tscn" id="2_4iorw"]
 
 [node name="ProjectWindow" type="MarginContainer"]
@@ -8,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_4iorw")
 
 [node name="MarginContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -40,10 +42,9 @@ text = "Credentials"
 [node name="ContentTabs" type="TabContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-current_tab = 1
+current_tab = 0
 
 [node name="Project" type="MarginContainer" parent="MarginContainer/ContentTabs"]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
@@ -104,6 +105,7 @@ layout_mode = 2
 text = "Project Metrics will appear here."
 
 [node name="Tests" type="MarginContainer" parent="MarginContainer/ContentTabs"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
@@ -141,12 +143,4 @@ custom_minimum_size = Vector2(180, 35)
 layout_mode = 2
 text = "Start Testing"
 
-[node name="Reports" type="MarginContainer" parent="MarginContainer/ContentTabs"]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 2
-
 [node name="CredentialsWindow" parent="." instance=ExtResource("2_4iorw")]
-initial_position = 2
-visible = false
-force_native = true

@@ -129,11 +129,11 @@ layout_mode = 2
 theme_override_styles/disabled = SubResource("StyleBoxFlat_5xvs1")
 text = "Pass"
 
-[node name="ProgressBar" type="HBoxContainer" parent="ProjectWindow/TestContent"]
+[node name="ProgressBar" type="HFlowContainer" parent="ProjectWindow/TestContent"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 30)
+custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
-size_flags_horizontal = 4
+alignment = 1
 
 [node name="Navigation" type="HBoxContainer" parent="ProjectWindow/TestContent"]
 layout_mode = 2

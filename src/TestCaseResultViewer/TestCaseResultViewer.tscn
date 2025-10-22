@@ -6,16 +6,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
 
-[node name="Content" type="VSplitContainer" parent="."]
+[node name="Content" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="ResultsList" type="VBoxContainer" parent="Content"]
+[node name="CaseInfo" type="VBoxContainer" parent="Content"]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="Content/CaseInfo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "<test case name>"
+
+[node name="Label2" type="Label" parent="Content/CaseInfo"]
+layout_mode = 2
+text = "<test case description>"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Content"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ResultsList" type="VBoxContainer" parent="Content/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Buttons" type="VFlowContainer" parent="Content"]

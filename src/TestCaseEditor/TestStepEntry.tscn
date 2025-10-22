@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://c8vmowixm77ds"]
+
+[node name="TestStepEntry" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TestCaseData" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="HeaderLine" type="HBoxContainer" parent="HBoxContainer/TestCaseData"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/TestCaseData/HeaderLine"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Step <number>"
+
+[node name="MoveUp" type="Button" parent="HBoxContainer/TestCaseData/HeaderLine"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+text = "▲"
+
+[node name="MoveDown" type="Button" parent="HBoxContainer/TestCaseData/HeaderLine"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+text = "▼"
+
+[node name="Edit" type="Button" parent="HBoxContainer/TestCaseData/HeaderLine"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 35)
+layout_mode = 2
+text = "Edit"
+
+[node name="Delete" type="Button" parent="HBoxContainer/TestCaseData/HeaderLine"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 35)
+layout_mode = 2
+text = "Delete"
+
+[node name="HSplitContainer" type="HSplitContainer" parent="HBoxContainer/TestCaseData"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/TestCaseData/HSplitContainer"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+size_flags_vertical = 0
+text = "Action"
+
+[node name="Action" type="Label" parent="HBoxContainer/TestCaseData/HSplitContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Action. Action. Action. Action. Action. Action. Action. Action. Action. Action. Action. Action. Action. Action. Action. Action. Action. Action. Action. Action. Action. "
+autowrap_mode = 3
+max_lines_visible = 3
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="HBoxContainer/TestCaseData"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/TestCaseData/HSplitContainer2"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+size_flags_vertical = 0
+text = "Expected
+Result"
+
+[node name="ExpectedResult" type="Label" parent="HBoxContainer/TestCaseData/HSplitContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Expectations. Expectations. Expectations. Expectations. Expectations. Expectations. Expectations. Expectations. Expectations. Expectations. Expectations. Expectations. Expectations. Expectations. "
+autowrap_mode = 3
+max_lines_visible = 3
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/TestCaseData"]
+layout_mode = 2
