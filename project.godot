@@ -30,7 +30,6 @@ window/size/viewport_height=600
 [file_customization]
 
 folder_colors={
-"res://data/": "pink",
 "res://debug_data/": "pink",
 "res://src/DataLayer/": "teal"
 }

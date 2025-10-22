@@ -1,59 +1,34 @@
-[gd_scene format=3 uid="uid://c8vmowixm77ds"]
+[gd_scene load_steps=2 format=3 uid="uid://c8vmowixm77ds"]
+
+[ext_resource type="Script" uid="uid://6hffmko66u5k" path="res://src/TestCaseEditor/TestStepEntry.gd" id="1_6aemi"]
 
 [node name="TestStepEntry" type="MarginContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 801.0
+offset_bottom = 150.0
+script = ExtResource("1_6aemi")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="TestCaseData" type="VBoxContainer" parent="HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TestCaseData" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 
-[node name="HeaderLine" type="HBoxContainer" parent="HBoxContainer/TestCaseData"]
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/HBoxContainer/TestCaseData"]
 layout_mode = 2
+dragging_enabled = false
 
-[node name="Label" type="Label" parent="HBoxContainer/TestCaseData/HeaderLine"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Step <number>"
-
-[node name="MoveUp" type="Button" parent="HBoxContainer/TestCaseData/HeaderLine"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-text = "▲"
-
-[node name="MoveDown" type="Button" parent="HBoxContainer/TestCaseData/HeaderLine"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-text = "▼"
-
-[node name="Edit" type="Button" parent="HBoxContainer/TestCaseData/HeaderLine"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(96, 35)
-layout_mode = 2
-text = "Edit"
-
-[node name="Delete" type="Button" parent="HBoxContainer/TestCaseData/HeaderLine"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(96, 35)
-layout_mode = 2
-text = "Delete"
-
-[node name="HSplitContainer" type="HSplitContainer" parent="HBoxContainer/TestCaseData"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HBoxContainer/TestCaseData/HSplitContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/TestCaseData/HSplitContainer"]
 custom_minimum_size = Vector2(96, 0)
 layout_mode = 2
 size_flags_vertical = 0
 text = "Action"
 
-[node name="Action" type="Label" parent="HBoxContainer/TestCaseData/HSplitContainer"]
+[node name="Action" type="Label" parent="VBoxContainer/HBoxContainer/TestCaseData/HSplitContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
@@ -62,17 +37,18 @@ text = "Action. Action. Action. Action. Action. Action. Action. Action. Action. 
 autowrap_mode = 3
 max_lines_visible = 3
 
-[node name="HSplitContainer2" type="HSplitContainer" parent="HBoxContainer/TestCaseData"]
+[node name="HSplitContainer2" type="HSplitContainer" parent="VBoxContainer/HBoxContainer/TestCaseData"]
 layout_mode = 2
+dragging_enabled = false
 
-[node name="Label" type="Label" parent="HBoxContainer/TestCaseData/HSplitContainer2"]
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/TestCaseData/HSplitContainer2"]
 custom_minimum_size = Vector2(96, 0)
 layout_mode = 2
 size_flags_vertical = 0
 text = "Expected
 Result"
 
-[node name="ExpectedResult" type="Label" parent="HBoxContainer/TestCaseData/HSplitContainer2"]
+[node name="ExpectedResult" type="Label" parent="VBoxContainer/HBoxContainer/TestCaseData/HSplitContainer2"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
@@ -81,5 +57,40 @@ text = "Expectations. Expectations. Expectations. Expectations. Expectations. Ex
 autowrap_mode = 3
 max_lines_visible = 3
 
-[node name="HSeparator" type="HSeparator" parent="HBoxContainer/TestCaseData"]
+[node name="HeaderLine" type="GridContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+columns = 2
+
+[node name="MoveUp" type="Button" parent="VBoxContainer/HBoxContainer/HeaderLine"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "▲"
+
+[node name="Edit" type="Button" parent="VBoxContainer/HBoxContainer/HeaderLine"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 35)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Edit"
+
+[node name="MoveDown" type="Button" parent="VBoxContainer/HBoxContainer/HeaderLine"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "▼"
+
+[node name="Delete" type="Button" parent="VBoxContainer/HBoxContainer/HeaderLine"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 35)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Delete"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2

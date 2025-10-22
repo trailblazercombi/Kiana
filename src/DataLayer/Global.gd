@@ -1,11 +1,14 @@
 extends Node
 
 const FILE_EXTENSION = &".kiana"
-const PROJECT_MIME = &"project.%s" % FILE_EXTENSION
-const TEST_CASE_MIME = &"case.%s" % FILE_EXTENSION
-const TEST_RESULT_MIME = &"result.%s" % FILE_EXTENSION
+const PROJECT_MIME = &"project%s" % FILE_EXTENSION
+const TEST_CASE_MIME = &"case%s" % FILE_EXTENSION
+const TEST_RESULT_MIME = &"result%s" % FILE_EXTENSION
 
 var dir: String
+
+@warning_ignore("unused_signal")
+signal refresh_data
 
 enum Status {
 	PASSED,
@@ -15,6 +18,7 @@ enum Status {
 
 func _ready() -> void:
 	get_tree().root.add_child.call_deferred(_throbber)
+	_throbber.z_index = 4090
 	_throbber.hide()
 
 #region The actual data
@@ -214,6 +218,12 @@ func popup_error(message: StringName, ok_action: Callable) -> void:
 	
 	get_tree().root.add_child(error)
 	error.popup_centered()
+
+var last_known_test_case_edit_path: StringName
+
+func edit_test_case(file_path: StringName) -> void:
+	last_known_test_case_edit_path = file_path
+	get_tree().change_scene_to_file("res://src/TestCaseEditor/TestCaseEditor.tscn")
 
 func quit() -> void:
 	get_tree().quit()

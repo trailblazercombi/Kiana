@@ -1,6 +1,6 @@
 class_name Project extends Node
 
-const PROJECT_FILE_NAME = &"%s\\project.kiana"
+const PROJECT_FILE_NAME = &"%sproject.kiana"
 
 static func DEFAULT() -> Dictionary:
 	return {
@@ -57,8 +57,26 @@ func save_to_disk() -> void:
 func get_test_cases() -> Array[TestCase]:
 	var test_cases: Array[TestCase] = []
 	var dir := DirAccess.open(folder)
-	dir.get_files()
+	var files: Array = Array(dir.get_files()).filter(
+		func(file: String) -> bool: return file.begins_with(&"case_")
+	)
+	
+	for file: String in files:
+		test_cases.append(TestCase.new(file))
+	
 	return test_cases
+
+func get_test_results() -> Array[TestResult]:
+	var test_results: Array[TestResult] = []
+	var dir := DirAccess.open(folder)
+	var files: Array[StringName] = Array(dir.get_files()).filter(
+		func(file: String) -> bool: return file.begins_with(&"result_")
+	)
+	
+	for file: String in files:
+		test_results.append(TestResult.new(file))
+	
+	return test_results
 
 var is_open_happening: bool = false
 var last_open_status: bool = false

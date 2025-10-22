@@ -15,3 +15,6 @@ func _ready() -> void:
 		Global.credentials.save_to_disk()
 		close_requested.emit()
 	)
+
+func _input(event: InputEvent) -> void:
+	if event.is_action(&"ui_cancel"): close_requested.emit()

@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqs4ep3spna8s"]
+[gd_scene load_steps=3 format=3 uid="uid://cqs4ep3spna8s"]
 
+[ext_resource type="Script" uid="uid://bd5f04bdgojq3" path="res://src/TestCaseEditor/TestCaseEditor.gd" id="1_8vj2k"]
 [ext_resource type="PackedScene" uid="uid://l8yk06ij10jt" path="res://src/TestCaseEditor/StepCreateWindow.tscn" id="2_8vj2k"]
 
 [node name="TestCaseEditor" type="MarginContainer"]
@@ -8,9 +9,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8vj2k")
 
 [node name="Content" type="VSplitContainer" parent="."]
 layout_mode = 2
+dragging_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Content"]
 layout_mode = 2
@@ -58,6 +61,7 @@ text = "Steps"
 [node name="TestStepBox" type="VSplitContainer" parent="Content/VBoxContainer/StepBox"]
 layout_mode = 2
 size_flags_horizontal = 3
+dragging_enabled = false
 
 [node name="Buttons" type="VFlowContainer" parent="Content/VBoxContainer/StepBox/TestStepBox"]
 layout_mode = 2
@@ -99,4 +103,3 @@ text = "Save
 
 [node name="StepCreateWindow" parent="." instance=ExtResource("2_8vj2k")]
 visible = false
-force_native = true

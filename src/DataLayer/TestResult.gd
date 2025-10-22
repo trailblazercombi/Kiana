@@ -79,6 +79,11 @@ func save_to_disk() -> void:
 	var file := FileAccess.open(full_file_path(), FileAccess.WRITE)
 	file.store_string(JSON.stringify(kiana_file, &"\t"))
 	file.close()
+	Global.refresh_data.emit()
+
+func move_to_trash() -> void:
+	OS.move_to_trash(full_file_path())
+	Global.refresh_data.emit()
 
 func full_file_path() -> StringName:
 	return &"%s\\%s" % [Global.project.folder, file_name]
