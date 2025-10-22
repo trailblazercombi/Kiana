@@ -136,10 +136,10 @@ func open_project() -> bool:
 		hide_throbber()
 		return false
 
-func load_project(file_path: String) -> void:
+func load_project(file_path: String) -> bool:
 		show_throbber(tr(&"Opening %s" % file_path))
 		project = Project.new(file_path)
-		await project.open_success()
+		return await project.open_success()
 
 func create_project() -> bool:
 	show_throbber(tr(&"Creating project..."))

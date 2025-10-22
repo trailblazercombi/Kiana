@@ -25,6 +25,7 @@ theme_override_constants/margin_bottom = 20
 
 [node name="VSplitContainer" type="VSplitContainer" parent="MarginContainer"]
 layout_mode = 2
+dragging_enabled = false
 
 [node name="Content" type="VBoxContainer" parent="MarginContainer/VSplitContainer"]
 layout_mode = 2
