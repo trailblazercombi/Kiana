@@ -41,6 +41,8 @@ func _ready() -> void:
 	
 	Global.refresh_data.connect(collect_test_cases)
 	collect_test_cases()
+	
+	Global.selected_test_cases.clear()
 
 func collect_test_cases() -> void:
 	Global.show_throbber(&"Working...")

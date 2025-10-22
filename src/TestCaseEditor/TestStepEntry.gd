@@ -9,6 +9,7 @@ signal edit
 signal delete
 
 func _ready() -> void:
+	%Number.text = tr(&"%d.") % (get_index() + 1)
 	%Action.text = step[&"step_action"]
 	%ExpectedResult.text = step[&"step_expect"]
 	
@@ -23,3 +24,15 @@ func update_data(action: StringName, expect: StringName) -> void:
 	
 	step[&"step_expect"] = expect
 	%ExpectedResult.text = expect
+
+func disable_up() -> void:
+	%MoveUp.disabled = true
+
+func disable_down() -> void:
+	%MoveDown.disabled = true
+
+func enable_up() -> void:
+	%MoveUp.disabled = false
+
+func enable_down() -> void:
+	%MoveDown.disabled = false

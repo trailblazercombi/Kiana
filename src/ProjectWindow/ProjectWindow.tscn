@@ -14,25 +14,31 @@ script = ExtResource("1_4iorw")
 [node name="MarginContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="Toolbar" type="HSplitContainer" parent="MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+
+[node name="Toolbar" type="HSplitContainer" parent="MarginContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Left" type="HFlowContainer" parent="MarginContainer/Toolbar"]
+[node name="Left" type="HFlowContainer" parent="MarginContainer/MarginContainer/Toolbar"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="CloseProject" type="Button" parent="MarginContainer/Toolbar/Left"]
+[node name="CloseProject" type="Button" parent="MarginContainer/MarginContainer/Toolbar/Left"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 35)
 layout_mode = 2
 text = "◀ Close Project"
 
-[node name="Right" type="HBoxContainer" parent="MarginContainer/Toolbar"]
+[node name="Right" type="HBoxContainer" parent="MarginContainer/MarginContainer/Toolbar"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 
-[node name="Credentials" type="Button" parent="MarginContainer/Toolbar/Right"]
+[node name="Credentials" type="Button" parent="MarginContainer/MarginContainer/Toolbar/Right"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 35)
 layout_mode = 2
@@ -46,10 +52,6 @@ current_tab = 0
 
 [node name="Project" type="MarginContainer" parent="MarginContainer/ContentTabs"]
 layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
 metadata/_tab_index = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ContentTabs/Project"]

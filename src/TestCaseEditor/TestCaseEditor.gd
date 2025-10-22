@@ -22,28 +22,14 @@ func _ready() -> void:
 		var entry: TestStepEntry = preload_tse.instantiate()
 		entry.step = test_step
 		%TestSteps.add_child(entry)
+		connect_signals(entry)
+	
+	disable_nonsense_move_commands()
 	
 	%AddStep.button_down.connect(func() -> void:
 		Global.show_throbber(&"Creating step...")
 		var new_step: TestStepEntry = preload_tse.instantiate()
-		
-		new_step.move_up.connect(func() -> void:
-			%TestSteps.move_child(new_step, new_step.get_index() - 1)
-		)
-		
-		new_step.move_down.connect(func() -> void:
-			%TestSteps.move_child(new_step, new_step.get_index() + 1)
-		)
-		
-		new_step.edit.connect(func() -> void:
-			Global.show_throbber(&"Editing step...")
-			$StepCreateWindow.edit_step(new_step)
-		)
-		
-		new_step.delete.connect(func() -> void:
-			%TestSteps.remove_child(new_step)
-			new_step.queue_free()
-		)
+		connect_signals(new_step)
 		
 		%TestSteps.add_child(
 			await $StepCreateWindow.edit_step(new_step)
@@ -67,6 +53,40 @@ func _ready() -> void:
 
 func _compile_steps() -> Array[Dictionary]:
 	var result: Array[Dictionary] = []
-	for child: TestStepEntry in %TestSteps.get_children():
-		result.append(child.step)
+	for child: Node in %TestSteps.get_children():
+		if child is TestStepEntry: result.append(child.step)
 	return result
+
+func disable_nonsense_move_commands() -> void:
+	for entry: Node in %TestSteps.get_children():
+		if entry is TestCaseEntry:
+			entry.enable_up()
+			entry.enable_down()
+			
+			if entry.get_index() == 0: 
+				entry.disable_up()
+			if entry.get_index() == %TestSteps.get_child_count() - 1: 
+				entry.disable_down()
+
+func connect_signals(entry: TestStepEntry) -> void:
+	entry.move_up.connect(func() -> void:
+		%TestSteps.move_child(entry, entry.get_index() - 1)
+		disable_nonsense_move_commands()
+	)
+	
+	entry.move_down.connect(func() -> void:
+		%TestSteps.move_child(entry, entry.get_index() + 1)
+		disable_nonsense_move_commands()
+	)
+	
+	entry.edit.connect(func() -> void:
+		Global.show_throbber(&"Editing step...")
+		$StepCreateWindow.edit_step(entry)
+		disable_nonsense_move_commands()
+	)
+	
+	entry.delete.connect(func() -> void:
+		%TestSteps.remove_child(entry)
+		entry.queue_free()
+		disable_nonsense_move_commands()
+	)

@@ -6,7 +6,13 @@ var test_case_file_path: StringName
 var test_case: TestCase
 
 func _ready() -> void:
-	%TestCaseSelected.toggled.connect(selected.emit)
+	%TestCaseSelected.toggled.connect(func(yeah: bool) -> void:
+		selected.emit(yeah)
+		if yeah: Global.selected_test_cases.append(test_case)
+		else: Global.selected_test_cases.erase(test_case)
+	)
+	
+	%TestCaseSelected.button_pressed = Global.selected_test_cases.has(test_case)
 
 	%TestCaseName.text = test_case.title
 	%TestCaseDescription.text = test_case.description

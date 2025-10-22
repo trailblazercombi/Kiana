@@ -2,7 +2,7 @@
 
 [node name="TestResultStepEntry" type="FoldableContainer"]
 offset_right = 638.0
-offset_bottom = 1396.0
+offset_bottom = 384.0
 folded = true
 title = "✅ Step <number> <passed>"
 
