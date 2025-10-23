@@ -48,9 +48,10 @@ text = "Credentials"
 [node name="ContentTabs" type="TabContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-current_tab = 0
+current_tab = 1
 
 [node name="Project" type="MarginContainer" parent="MarginContainer/ContentTabs"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -122,7 +123,6 @@ layout_mode = 2
 text = "Project Metrics will appear here."
 
 [node name="Tests" type="MarginContainer" parent="MarginContainer/ContentTabs"]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
@@ -134,6 +134,7 @@ metadata/_tab_index = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+dragging_enabled = false
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/ContentTabs/Tests/TestCases"]
 layout_mode = 2

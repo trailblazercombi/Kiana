@@ -3,9 +3,8 @@
 [ext_resource type="Script" uid="uid://dkwb30wf2wi1f" path="res://src/ProjectSelect/RecentEntry.gd" id="1_bl2ht"]
 
 [node name="RecentEntry" type="VBoxContainer"]
-offset_left = 458.0
-offset_right = 458.0
-offset_bottom = 35.0
+offset_right = 259.0
+offset_bottom = 43.0
 script = ExtResource("1_bl2ht")
 
 [node name="Content" type="HBoxContainer" parent="."]

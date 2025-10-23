@@ -16,19 +16,26 @@ layout_mode = 2
 [node name="Actions" type="VBoxContainer" parent="HSplitContainer"]
 layout_mode = 2
 
-[node name="Create" type="Button" parent="HSplitContainer/Actions"]
+[node name="TopBox" type="VBoxContainer" parent="HSplitContainer/Actions"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Create" type="Button" parent="HSplitContainer/Actions/TopBox"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 35)
 layout_mode = 2
 text = "New Project"
 
-[node name="Load" type="Button" parent="HSplitContainer/Actions"]
+[node name="Load" type="Button" parent="HSplitContainer/Actions/TopBox"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 35)
 layout_mode = 2
 text = "Load Project"
 
-[node name="Credentials" type="Button" parent="HSplitContainer/Actions"]
+[node name="BottomBox" type="VBoxContainer" parent="HSplitContainer/Actions"]
+layout_mode = 2
+
+[node name="Credentials" type="Button" parent="HSplitContainer/Actions/BottomBox"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 35)
 layout_mode = 2

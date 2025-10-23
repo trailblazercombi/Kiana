@@ -59,30 +59,30 @@ layout_mode = 2
 size_flags_vertical = 0
 text = "Steps"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Content/VBoxContainer/StepBox"]
+[node name="PanelContainer" type="PanelContainer" parent="Content/VBoxContainer/StepBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Content/VBoxContainer/StepBox/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TestSteps" type="VBoxContainer" parent="Content/VBoxContainer/StepBox/ScrollContainer"]
+[node name="TestSteps" type="VBoxContainer" parent="Content/VBoxContainer/StepBox/PanelContainer/ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="Buttons" type="VFlowContainer" parent="Content/VBoxContainer/StepBox/ScrollContainer/TestSteps"]
-layout_mode = 2
-size_flags_horizontal = 8
-
-[node name="AddStep" type="Button" parent="Content/VBoxContainer/StepBox/ScrollContainer/TestSteps/Buttons"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(96, 35)
-layout_mode = 2
-text = "Add Step"
 
 [node name="Buttons" type="VFlowContainer" parent="Content"]
 layout_mode = 2
 size_flags_horizontal = 8
+
+[node name="AddStep" type="Button" parent="Content/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 35)
+layout_mode = 2
+text = "Add Step"
 
 [node name="Cancel" type="Button" parent="Content/Buttons"]
 unique_name_in_owner = true
