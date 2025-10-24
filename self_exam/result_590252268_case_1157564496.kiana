@@ -1,0 +1,40 @@
+{
+	"credentials": {
+		"recent_folders": [
+			"C:/Users/domuh/GitHub/Kiana/self_exam/project.kiana"
+		],
+		"system_info": "OS Name: Windows\nOS Version: 10.0.26200\nLocale: en_GB\nUnique ID: {f748be6d-7eca-11f0-963f-806e6f6e6963}\nCPU Name: 12th Gen Intel(R) Core(TM) i5-1235U\nCPU Count: 12\nStatic Memory Usage (MB): 79.1286325454712\nScreen Count: 2\nPrimary Screen Size: (1920, 1080)\nWindow Size: (800, 600)\nGPU Name: Intel(R) Iris(R) Xe Graphics\nGPU Vendor: Unknown\nEngine Version: 4.5-stable (official)\nExecutable Path: C:/Users/domuh/AppData/Local/Microsoft/WinGet/Packages/Godot_v4.5-stable_win64.exe/Godot_v4.5-stable_win64.exe\nUser Data Dir: C:/Users/domuh/AppData/Roaming/Godot/app_userdata/Kiana\nEnvironment Vars: \nUSERNAME=domuh\nCOMPUTERNAME=ARIA\nAPPDATA=C:\\Users\\domuh\\AppData\\Roaming\nPATH=C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Vim\\vim91;C:\\Program Files\\Git\\cmd;C:\\Users\\domuh\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\domuh\\AppData\\Local\\Microsoft\\WinGet\\Links;C:\\Users\\domuh\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\domuh\\AppData\\Local\\JetBrains\\Toolbox\\scripts;C:\\Users\\domuh\\AppData\\Local\\PowerToys\\\nDisk Info: Free: 366122.76171875 MB free (in C:/Users/domuh/AppData/Roaming/Godot/app_userdata/Kiana)\n",
+		"tester_name": "Domčo!"
+	},
+	"description": "",
+	"mime": "result.kiana",
+	"start_time": {
+		"day": 24,
+		"dst": true,
+		"hour": 13,
+		"minute": 36,
+		"month": 10,
+		"second": 7,
+		"weekday": 5,
+		"year": 2025
+	},
+	"submit_time": {
+		"day": 24,
+		"dst": true,
+		"hour": 13,
+		"minute": 36,
+		"month": 10,
+		"second": 10,
+		"weekday": 5,
+		"year": 2025
+	},
+	"test_steps": [
+		{
+			"step_action": "Yeah",
+			"step_actual": "",
+			"step_expect": "This is a step. The only step.",
+			"step_status": 0
+		}
+	],
+	"title": "Test for tests."
+}

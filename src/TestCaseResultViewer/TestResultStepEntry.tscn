@@ -1,17 +1,24 @@
-[gd_scene format=3 uid="uid://do0oggnfnnwdc"]
+[gd_scene load_steps=2 format=3 uid="uid://do0oggnfnnwdc"]
+
+[ext_resource type="Script" uid="uid://ckbf1s8f8w76w" path="res://src/TestCaseResultViewer/TestResultStepEntry.gd" id="1_6o4hf"]
 
 [node name="TestResultStepEntry" type="FoldableContainer"]
 offset_right = 638.0
-offset_bottom = 192.0
+offset_bottom = 157.0
+folded = true
 title = "✅ Step <number> <passed>"
+title_text_overrun_behavior = 4
+script = ExtResource("1_6o4hf")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 2
 
 [node name="Content" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
 [node name="ActionBox" type="HSplitContainer" parent="MarginContainer/Content"]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/Content/ActionBox"]
@@ -29,6 +36,7 @@ text = "<action>"
 autowrap_mode = 3
 
 [node name="HSeparator3" type="HSeparator" parent="MarginContainer/Content"]
+visible = false
 layout_mode = 2
 
 [node name="ExpectBox" type="HSplitContainer" parent="MarginContainer/Content"]

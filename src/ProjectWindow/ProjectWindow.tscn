@@ -9,153 +9,135 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_4iorw")
 
-[node name="MarginContainer" type="VBoxContainer" parent="."]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 0
-theme_override_constants/margin_top = 0
-theme_override_constants/margin_right = 0
-
-[node name="Toolbar" type="HSplitContainer" parent="MarginContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="Left" type="HFlowContainer" parent="MarginContainer/MarginContainer/Toolbar"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="CloseProject" type="Button" parent="MarginContainer/MarginContainer/Toolbar/Left"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(180, 35)
-layout_mode = 2
-text = "◀ Close Project"
-
-[node name="Right" type="HBoxContainer" parent="MarginContainer/MarginContainer/Toolbar"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-
-[node name="Credentials" type="Button" parent="MarginContainer/MarginContainer/Toolbar/Right"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(180, 35)
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Credentials"
-
-[node name="ContentTabs" type="TabContainer" parent="MarginContainer"]
+[node name="ContentTabs" type="TabContainer" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
 current_tab = 1
 
-[node name="Project" type="MarginContainer" parent="MarginContainer/ContentTabs"]
+[node name="Project" type="MarginContainer" parent="ContentTabs"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ContentTabs/Project"]
+[node name="Vbox" type="VBoxContainer" parent="ContentTabs/Project"]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="NameLine" type="HBoxContainer" parent="MarginContainer/ContentTabs/Project/VBoxContainer"]
+[node name="NameLine" type="HBoxContainer" parent="ContentTabs/Project/Vbox"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/ContentTabs/Project/VBoxContainer/NameLine"]
+[node name="Label" type="Label" parent="ContentTabs/Project/Vbox/NameLine"]
 custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
 text = "Project Name"
 
-[node name="ProjectName" type="LineEdit" parent="MarginContainer/ContentTabs/Project/VBoxContainer/NameLine"]
+[node name="ProjectName" type="LineEdit" parent="ContentTabs/Project/Vbox/NameLine"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(260, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="DescLine" type="HBoxContainer" parent="MarginContainer/ContentTabs/Project/VBoxContainer"]
+[node name="DescLine" type="HBoxContainer" parent="ContentTabs/Project/Vbox"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="MarginContainer/ContentTabs/Project/VBoxContainer/DescLine"]
+[node name="Label" type="Label" parent="ContentTabs/Project/Vbox/DescLine"]
 custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
 size_flags_vertical = 0
 text = "Description"
 
-[node name="ProjectDescription" type="TextEdit" parent="MarginContainer/ContentTabs/Project/VBoxContainer/DescLine"]
+[node name="ProjectDescription" type="TextEdit" parent="ContentTabs/Project/Vbox/DescLine"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 wrap_mode = 1
 
-[node name="TabCheck" type="HBoxContainer" parent="MarginContainer/ContentTabs/Project/VBoxContainer"]
+[node name="TabCheck" type="HBoxContainer" parent="ContentTabs/Project/Vbox"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/ContentTabs/Project/VBoxContainer/TabCheck"]
+[node name="Label" type="Label" parent="ContentTabs/Project/Vbox/TabCheck"]
 custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="TabCheck" type="CheckBox" parent="MarginContainer/ContentTabs/Project/VBoxContainer/TabCheck"]
+[node name="TabCheck" type="CheckBox" parent="ContentTabs/Project/Vbox/TabCheck"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Next time, open the project on \"Tests\" tab"
 
-[node name="Metrics" type="HBoxContainer" parent="MarginContainer/ContentTabs/Project/VBoxContainer"]
+[node name="Metrics" type="HBoxContainer" parent="ContentTabs/Project/Vbox"]
 layout_mode = 2
 size_flags_vertical = 2
 
-[node name="Label" type="Label" parent="MarginContainer/ContentTabs/Project/VBoxContainer/Metrics"]
+[node name="Label" type="Label" parent="ContentTabs/Project/Vbox/Metrics"]
 custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
 size_flags_vertical = 0
 text = "Metrics"
 
-[node name="ProjectMetrics" type="VBoxContainer" parent="MarginContainer/ContentTabs/Project/VBoxContainer/Metrics"]
+[node name="ProjectMetrics" type="VBoxContainer" parent="ContentTabs/Project/Vbox/Metrics"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="MarginContainer/ContentTabs/Project/VBoxContainer/Metrics/ProjectMetrics"]
+[node name="Label" type="Label" parent="ContentTabs/Project/Vbox/Metrics/ProjectMetrics"]
 layout_mode = 2
 text = "Project Metrics will appear here."
 
-[node name="Tests" type="MarginContainer" parent="MarginContainer/ContentTabs"]
+[node name="Right" type="VBoxContainer" parent="ContentTabs/Project/Vbox"]
 layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="CloseProject" type="Button" parent="ContentTabs/Project/Vbox/Right"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 35)
+layout_mode = 2
+text = "◀ Close Project"
+
+[node name="Credentials" type="Button" parent="ContentTabs/Project/Vbox/Right"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 35)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Credentials..."
+
+[node name="Tests" type="MarginContainer" parent="ContentTabs"]
+layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="TestCases" type="VSplitContainer" parent="MarginContainer/ContentTabs/Tests"]
+[node name="TestCases" type="VSplitContainer" parent="ContentTabs/Tests"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 dragging_enabled = false
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/ContentTabs/Tests/TestCases"]
+[node name="ScrollContainer" type="ScrollContainer" parent="ContentTabs/Tests/TestCases"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="TestCaseList" type="VBoxContainer" parent="MarginContainer/ContentTabs/Tests/TestCases/ScrollContainer"]
+[node name="TestCaseList" type="VBoxContainer" parent="ContentTabs/Tests/TestCases/ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Buttons" type="HFlowContainer" parent="MarginContainer/ContentTabs/Tests/TestCases"]
+[node name="Buttons" type="HFlowContainer" parent="ContentTabs/Tests/TestCases"]
 layout_mode = 2
 
-[node name="TestCaseAdd" type="Button" parent="MarginContainer/ContentTabs/Tests/TestCases/Buttons"]
+[node name="TestCaseAdd" type="Button" parent="ContentTabs/Tests/TestCases/Buttons"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 35)
 layout_mode = 2
 text = "Add Test Case"
 
-[node name="TestCaseBegin" type="Button" parent="MarginContainer/ContentTabs/Tests/TestCases/Buttons"]
+[node name="TestCaseBegin" type="Button" parent="ContentTabs/Tests/TestCases/Buttons"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 35)
 layout_mode = 2

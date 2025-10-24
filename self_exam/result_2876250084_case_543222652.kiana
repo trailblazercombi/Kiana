@@ -1,0 +1,76 @@
+{
+	"credentials": {
+		"recent_folders": [
+			"C:/Users/domuh/GitHub/Kiana/self_exam/project.kiana"
+		],
+		"system_info": "OS Name: Windows\nOS Version: 10.0.26200\nLocale: en_GB\nUnique ID: {f748be6d-7eca-11f0-963f-806e6f6e6963}\nCPU Name: 12th Gen Intel(R) Core(TM) i5-1235U\nCPU Count: 12\nStatic Memory Usage (MB): 78.5665674209595\nScreen Count: 2\nPrimary Screen Size: (1920, 1080)\nWindow Size: (800, 600)\nGPU Name: Intel(R) Iris(R) Xe Graphics\nGPU Vendor: Unknown\nEngine Version: 4.5-stable (official)\nExecutable Path: C:/Users/domuh/AppData/Local/Microsoft/WinGet/Packages/Godot_v4.5-stable_win64.exe/Godot_v4.5-stable_win64.exe\nUser Data Dir: C:/Users/domuh/AppData/Roaming/Godot/app_userdata/Kiana\nEnvironment Vars: \nUSERNAME=domuh\nCOMPUTERNAME=ARIA\nAPPDATA=C:\\Users\\domuh\\AppData\\Roaming\nPATH=C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Vim\\vim91;C:\\Program Files\\Git\\cmd;C:\\Users\\domuh\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\domuh\\AppData\\Local\\Microsoft\\WinGet\\Links;C:\\Users\\domuh\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\domuh\\AppData\\Local\\JetBrains\\Toolbox\\scripts;C:\\Users\\domuh\\AppData\\Local\\PowerToys\\\nDisk Info: Free: 366078.89453125 MB free (in C:/Users/domuh/AppData/Roaming/Godot/app_userdata/Kiana)\n",
+		"tester_name": "Domčo!"
+	},
+	"description": "This test elaborates the project creation process.\nIt handles standard project creation, as well as non-standard edge-cases, such as creating a project in an invalid directory or in a directory that's already populated by an existing Kiana project.",
+	"mime": "result.kiana",
+	"start_time": {
+		"day": 23,
+		"dst": true,
+		"hour": 22,
+		"minute": 45,
+		"month": 10,
+		"second": 7,
+		"weekday": 4,
+		"year": 2025
+	},
+	"submit_time": {
+		"day": 23,
+		"dst": true,
+		"hour": 22,
+		"minute": 45,
+		"month": 10,
+		"second": 24,
+		"weekday": 4,
+		"year": 2025
+	},
+	"test_steps": [
+		{
+			"step_action": "Click \"Create project\".",
+			"step_actual": "Nope. Bad.",
+			"step_expect": "A native File Dialog opens. This dialog expects a folder.",
+			"step_status": 2
+		},
+		{
+			"step_action": "Select an empty folder.",
+			"step_actual": "Yea",
+			"step_expect": "This creates the \"project.kiana\" file inside of the folder.",
+			"step_status": 0
+		},
+		{
+			"step_action": "Change the project's properties (on the \"Project\" tab). That is, name, description and the little tick box.\t",
+			"step_actual": "",
+			"step_expect": "The text will change. It will persist upon switching tabs.",
+			"step_status": 1
+		},
+		{
+			"step_action": "Close the project using the \"Close Project\" button in the top left.",
+			"step_actual": "",
+			"step_expect": "The \"Select project\" page appears (the page upon launching Kiana). The opened project is now listed in the \"Recent projects\" list.",
+			"step_status": 2
+		},
+		{
+			"step_action": "Load the project from the \"Recent projects\" list. Click the \"Load\" button next to the project name.",
+			"step_actual": "",
+			"step_expect": "The project loads normally. The data entered on the \"Project\" tab is retained.",
+			"step_status": 2
+		},
+		{
+			"step_action": "Close the project again. Click \"Create Project\" and select the directory with the existing project in the dialog.",
+			"step_actual": "",
+			"step_expect": "An error message pop-up will appear informing you that there is a project in this folder already. Closing the pop-up brings you back to folder selection.",
+			"step_status": 0
+		},
+		{
+			"step_action": "Click \"Cancel\" in the File dialog, or close the File dialog using the \"x\" button (or red traffic light).",
+			"step_actual": "",
+			"step_expect": "The file dialog closes and the Project select page is displayed again.",
+			"step_status": 0
+		}
+	],
+	"title": "Create a new Kiana project"
+}

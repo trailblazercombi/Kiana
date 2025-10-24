@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpm6h2k18n4vg"]
+[gd_scene load_steps=5 format=3 uid="uid://cpm6h2k18n4vg"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fswb"]
-bg_color = Color(0.972549, 0.19215687, 0.18431373, 1)
+[ext_resource type="Script" uid="uid://dln3bmblcjmaj" path="res://src/TestCaseWindow/TestCaseWindow.gd" id="1_8fswb"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_8fswb"]
+allow_unpress = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xvs1"]
-bg_color = Color(0, 0.8235294, 0.41568628, 1)
+bg_color = Color(0.8784314, 0, 0.23921569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fswb"]
+bg_color = Color(0.17478809, 0.6229859, 0.39339644, 1)
 
 [node name="TestCaseWindow" type="MarginContainer"]
 anchors_preset = 15
@@ -12,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8fswb")
 
 [node name="ProjectWindow" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -35,15 +41,9 @@ size_flags_horizontal = 3
 text = "Test Case: <test case name>"
 text_overrun_behavior = 4
 
-[node name="TesterName" type="Label" parent="ProjectWindow/Toolbar/Left/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Tester: <tester name>"
-text_overrun_behavior = 4
-
 [node name="TimeElapsed" type="Label" parent="ProjectWindow/Toolbar/Left/VBoxContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 text = "<time> elapsed"
@@ -81,8 +81,10 @@ text = "Action:"
 
 [node name="StepAction" type="Label" parent="ProjectWindow/TestContent/StepContent"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 text = "<step contents>"
+autowrap_mode = 3
 
 [node name="HSeparator" type="HSeparator" parent="ProjectWindow/TestContent/StepContent"]
 layout_mode = 2
@@ -93,8 +95,10 @@ text = "Expected result:"
 
 [node name="StepExpect" type="Label" parent="ProjectWindow/TestContent/StepContent"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 text = "<step expectation>"
+autowrap_mode = 3
 
 [node name="HSeparator2" type="HSeparator" parent="ProjectWindow/TestContent/StepContent"]
 layout_mode = 2
@@ -112,22 +116,34 @@ wrap_mode = 1
 [node name="HSeparator3" type="HSeparator" parent="ProjectWindow/TestContent/StepContent"]
 layout_mode = 2
 
-[node name="HSplitContainer" type="HBoxContainer" parent="ProjectWindow/TestContent/StepContent"]
+[node name="PassFailButtons" type="HBoxContainer" parent="ProjectWindow/TestContent/StepContent"]
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="StepFail" type="Button" parent="ProjectWindow/TestContent/StepContent/HSplitContainer"]
+[node name="StepNotEval" type="Button" parent="ProjectWindow/TestContent/StepContent/PassFailButtons"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8fswb")
+text = "Not Evaluated"
+
+[node name="StepFail" type="Button" parent="ProjectWindow/TestContent/StepContent/PassFailButtons"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 30)
 layout_mode = 2
-theme_override_styles/disabled = SubResource("StyleBoxFlat_8fswb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5xvs1")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8fswb")
 text = "Fail"
 
-[node name="StepPass" type="Button" parent="ProjectWindow/TestContent/StepContent/HSplitContainer"]
+[node name="StepPass" type="Button" parent="ProjectWindow/TestContent/StepContent/PassFailButtons"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 30)
 layout_mode = 2
-theme_override_styles/disabled = SubResource("StyleBoxFlat_5xvs1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8fswb")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8fswb")
 text = "Pass"
 
 [node name="ProgressBar" type="HFlowContainer" parent="ProjectWindow/TestContent"]

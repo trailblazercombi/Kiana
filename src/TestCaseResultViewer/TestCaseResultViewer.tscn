@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://7qfdteihh2nd"]
+[gd_scene load_steps=2 format=3 uid="uid://7qfdteihh2nd"]
+
+[ext_resource type="Script" uid="uid://ji4wem7m7auf" path="res://src/TestCaseResultViewer/TestCaseResultViewer.gd" id="1_o2y3d"]
 
 [node name="TestCaseResultViewer" type="MarginContainer"]
 anchors_preset = 15
@@ -6,32 +8,89 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_o2y3d")
 
 [node name="Content" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="CaseInfo" type="VBoxContainer" parent="Content"]
+[node name="TopInfo" type="HBoxContainer" parent="Content"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Content/CaseInfo"]
+[node name="Title" type="Label" parent="Content/TopInfo"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(260, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
 text = "<test case name>"
+autowrap_mode = 3
 
-[node name="Label2" type="Label" parent="Content/CaseInfo"]
+[node name="ResultSwitcher" type="OptionButton" parent="Content/TopInfo"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "<test case description>"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text_overrun_behavior = 4
+allow_reselect = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Content"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ResultsList" type="VBoxContainer" parent="Content/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Content/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Buttons" type="VFlowContainer" parent="Content"]
+[node name="CaseInfo" type="VBoxContainer" parent="Content/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="DescBox" type="FoldableContainer" parent="Content/ScrollContainer/VBoxContainer/CaseInfo"]
+layout_mode = 2
+folded = true
+title = "Test Case Description"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Content/ScrollContainer/VBoxContainer/CaseInfo/DescBox"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Description" type="Label" parent="Content/ScrollContainer/VBoxContainer/CaseInfo/DescBox/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+text = "<test case description>"
+autowrap_mode = 3
+
+[node name="SystBox" type="FoldableContainer" parent="Content/ScrollContainer/VBoxContainer/CaseInfo"]
+layout_mode = 2
+folded = true
+title = "Tested System Configuration"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Content/ScrollContainer/VBoxContainer/CaseInfo/SystBox"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SystemInfo" type="Label" parent="Content/ScrollContainer/VBoxContainer/CaseInfo/SystBox/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+text = "<test case description>"
+autowrap_mode = 3
+
+[node name="HSeparator" type="HSeparator" parent="Content/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ResultsList" type="VBoxContainer" parent="Content/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Buttons" type="HBoxContainer" parent="Content"]
 layout_mode = 2
 size_flags_horizontal = 8
 

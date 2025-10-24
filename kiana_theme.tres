@@ -1,6 +1,9 @@
 [gd_resource type="Theme" format=3 uid="uid://ceyb1sjxinjc3"]
 
 [resource]
+Custom/colors/fail = Color(0.8784314, 0, 0.23921569, 1)
+Custom/colors/no_eval = Color(0.16493842, 0.16493842, 0.16493842, 1)
+Custom/colors/pass = Color(0.1764706, 0.62352943, 0.39215687, 1)
 MarginContainer/constants/margin_bottom = 20
 MarginContainer/constants/margin_left = 20
 MarginContainer/constants/margin_right = 20

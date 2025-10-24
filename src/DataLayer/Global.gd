@@ -17,7 +17,7 @@ enum Status {
 }
 
 func _ready() -> void:
-	get_tree().root.theme = load("res://theme.tres")
+	get_tree().root.theme = load("res://kiana_theme.tres")
 	get_tree().root.add_child.call_deferred(_throbber)
 	_throbber.z_index = 4090
 	_throbber.hide()
@@ -221,6 +221,7 @@ func popup_error(message: StringName, ok_action: Callable) -> void:
 	error.dialog_hide_on_ok = true
 	error.force_native = true
 	error.confirmed.connect(ok_action, CONNECT_ONE_SHOT)
+	error.canceled.connect(ok_action, CONNECT_ONE_SHOT)
 	
 	get_tree().root.add_child(error)
 	error.popup_centered()

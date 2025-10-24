@@ -1,0 +1,15 @@
+{
+	"description": "",
+	"mime": "case.kiana",
+	"test_steps": [
+		{
+			"step_action": "Yeah",
+			"step_expect": "This is a step. The only step."
+		},
+		{
+			"step_action": "Another step.",
+			"step_expect": "Yeah"
+		}
+	],
+	"title": "Test for tests."
+}

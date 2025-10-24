@@ -1,5 +1,5 @@
 {
-	"description": "This is a collection of user-based test cases that is intended to test Kiana itself.",
+	"description": "A collection of tests meant to test this very app (Kiana).\nHandle with care. Can break sometimes. Actually, that's the point. So who am I kidding.",
 	"mime": "project.kiana",
 	"tab_at_open": 1.0,
 	"title": "Kiana Self Examination Suite"

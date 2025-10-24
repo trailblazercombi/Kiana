@@ -24,3 +24,9 @@ func _ready() -> void:
 	%TestCaseDelete.button_down.connect(func() -> void:
 		test_case.move_to_trash()
 	)
+	
+	%TestCaseResults.button_down.connect(func() -> void:
+		Global.selected_test_cases.clear()
+		Global.selected_test_cases.push_front(test_case)
+		get_tree().change_scene_to_file("res://src/TestCaseResultViewer/TestCaseResultViewer.tscn")
+	)

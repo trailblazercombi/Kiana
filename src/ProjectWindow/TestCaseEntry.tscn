@@ -33,6 +33,7 @@ size_flags_horizontal = 3
 text = "Name of the Test Case"
 
 [node name="TestCaseResults" type="Button" parent="HBoxContainer/TestCaseData/HeaderLine"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(96, 0)
 layout_mode = 2
 text = "Results"

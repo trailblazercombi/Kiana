@@ -1,4 +1,4 @@
-class_name ProjectWindow extends MarginContainer
+class_name ProjectWindow extends Container
 
 var preload_tce: PackedScene = preload("res://src/ProjectWindow/TestCaseEntry.tscn")
 
@@ -8,7 +8,7 @@ func _ready() -> void:
 	
 	if Global.project.tab_at_open == Project.Tab.TESTS:
 		%TabCheck.button_pressed = true
-		$MarginContainer/ContentTabs/Tests.show()
+		$ContentTabs/Tests.show()
 	
 	%CloseProject.button_down.connect(func() -> void:
 		get_tree().change_scene_to_file("res://src/ProjectSelect/ProjectSelect.tscn")

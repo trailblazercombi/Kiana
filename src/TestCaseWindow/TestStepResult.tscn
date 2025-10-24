@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://p7xodbmmcl1h"]
+[gd_scene load_steps=2 format=3 uid="uid://p7xodbmmcl1h"]
+
+[ext_resource type="Script" uid="uid://bcbyf3c0lwonp" path="res://src/TestCaseWindow/TestStepResult.gd" id="1_ftioy"]
 
 [node name="TestStepResult" type="ColorRect"]
 custom_minimum_size = Vector2(16, 16)
@@ -14,6 +16,7 @@ offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.1764706, 0.1764706, 0.1764706, 1)
+script = ExtResource("1_ftioy")
 
 [node name="Number" type="Label" parent="."]
 custom_minimum_size = Vector2(16, 16)

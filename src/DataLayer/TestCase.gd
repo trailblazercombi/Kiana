@@ -52,7 +52,7 @@ func _init(the_file_name: StringName) -> void:
 		)
 
 func get_all_steps() -> Array:
-	return (kiana_file[&"test_steps"] as Array)
+	return test_steps
 
 func save_to_disk() -> void:
 	var file := FileAccess.open(full_file_path(), FileAccess.WRITE)
