@@ -18,8 +18,15 @@ func _ready() -> void:
 		Global.edit_credentials()
 	)
 	
+	%Credentials2.button_down.connect(func() -> void:
+		Global.edit_credentials()
+	)
+	
 	%ProjectName.text_changed.connect(func(text: String) -> void:
 		Global.project.title = text
+		get_window().title = tr(
+			&"%s - %s - Kiana"
+		) % [Global.project.title, Global.credentials.tester_name]
 	)
 	
 	%ProjectDescription.text_changed.connect(func() -> void:

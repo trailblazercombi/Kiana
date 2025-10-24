@@ -13,25 +13,18 @@ script = ExtResource("1_o2y3d")
 [node name="Content" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="TopInfo" type="HBoxContainer" parent="Content"]
-layout_mode = 2
-
-[node name="Title" type="Label" parent="Content/TopInfo"]
+[node name="Close" type="Button" parent="Content"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(260, 0)
+custom_minimum_size = Vector2(96, 35)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 0
+text = "◀ Tests"
+
+[node name="Title" type="Label" parent="Content"]
+unique_name_in_owner = true
+layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "<test case name>"
-autowrap_mode = 3
-
-[node name="ResultSwitcher" type="OptionButton" parent="Content/TopInfo"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text_overrun_behavior = 4
-allow_reselect = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Content"]
 layout_mode = 2
@@ -42,26 +35,25 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="CaseInfo" type="VBoxContainer" parent="Content/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="DescBox" type="FoldableContainer" parent="Content/ScrollContainer/VBoxContainer/CaseInfo"]
-layout_mode = 2
-folded = true
-title = "Test Case Description"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Content/ScrollContainer/VBoxContainer/CaseInfo/DescBox"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Description" type="Label" parent="Content/ScrollContainer/VBoxContainer/CaseInfo/DescBox/VBoxContainer"]
+[node name="Description" type="Label" parent="Content/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 text = "<test case description>"
 autowrap_mode = 3
+
+[node name="HSeparator2" type="HSeparator" parent="Content/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ResultSwitcher" type="OptionButton" parent="Content/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text_overrun_behavior = 4
+allow_reselect = true
+
+[node name="CaseInfo" type="VBoxContainer" parent="Content/ScrollContainer/VBoxContainer"]
+layout_mode = 2
 
 [node name="SystBox" type="FoldableContainer" parent="Content/ScrollContainer/VBoxContainer/CaseInfo"]
 layout_mode = 2
@@ -93,9 +85,3 @@ size_flags_vertical = 3
 [node name="Buttons" type="HBoxContainer" parent="Content"]
 layout_mode = 2
 size_flags_horizontal = 8
-
-[node name="Close" type="Button" parent="Content/Buttons"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(180, 35)
-layout_mode = 2
-text = "Close"

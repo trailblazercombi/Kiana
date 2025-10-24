@@ -13,6 +13,7 @@ func _ready() -> void:
 		%ThrobberOverlay.show()
 		Global.credentials.tester_name = %Name.text
 		Global.credentials.save_to_disk()
+		
 		close_requested.emit()
 	)
 

@@ -1,6 +1,6 @@
 {
-	"description": "A collection of tests meant to test this very app (Kiana).\nHandle with care. Can break sometimes. Actually, that's the point. So who am I kidding.",
+	"description": "A collection of tests meant to test this very app (Kiana). Handle with care. Can break sometimes. Actually, that's the point. So who am I kidding.",
 	"mime": "project.kiana",
 	"tab_at_open": 1.0,
-	"title": "Kiana Self Examination Suite"
+	"title": "Kiana Self Exam Suite"
 }

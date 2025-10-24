@@ -3,6 +3,8 @@ class_name ProjectSelect extends MarginContainer
 var recent_entry: PackedScene = preload("res://src/ProjectSelect/RecentEntry.tscn")
 
 func _ready() -> void:
+	get_window().title = tr(&"Kiana")
+	
 	%Create.button_down.connect(func() -> void:
 		if await Global.create_project():
 			get_tree().change_scene_to_file("res://src/ProjectWindow/ProjectWindow.tscn")

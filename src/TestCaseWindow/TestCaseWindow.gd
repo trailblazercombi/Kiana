@@ -75,7 +75,21 @@ func _ready() -> void:
 		eval_step(TestResult.StepStatus.PASSED)
 	)
 	
+	var pascal: PackedScene = preload("res://src/TestCaseWindow/TestStepResult.tscn")
+	for i in range(result.test_steps.size()):
+		var inst: TestStepResult = pascal.instantiate()
+		inst.color = TestStepResult.NO_EVAL
+		inst.step_number = &"%s" % (i + 1)
+		%ProgressBar.add_child(inst)
+	
 	step_now = 0
 
 func eval_step(eval: TestResult.StepStatus) -> void:
-	result.kiana_file[&"test_steps"][step_now][&"step_status"] = eval
+	result.test_steps[step_now][&"step_status"] = eval
+	match eval:
+		TestResult.StepStatus.NOT_EVALUATED:
+			%ProgressBar.get_child(step_now).color = TestStepResult.NO_EVAL
+		TestResult.StepStatus.PASSED:
+			%ProgressBar.get_child(step_now).color = TestStepResult.PASS
+		TestResult.StepStatus.FAILED:
+			%ProgressBar.get_child(step_now).color = TestStepResult.FAIL

@@ -90,7 +90,14 @@ func get_system_info() -> String:
 #endregion
 #region Contextual stuff
 
-var project: Project = null
+var project: Project = null:
+	set(value):
+		project = value
+		if project == null: get_window().title = tr(&"Kiana")
+		else: get_window().title = tr(&"%s - %s - Kiana") % [
+			Global.project.title,
+			Global.credentials.tester_name
+		]
 
 var credentials: Credentials = Credentials.new()
 
@@ -198,6 +205,12 @@ func edit_credentials() -> void:
 	cred_win.close_requested.connect(func() -> void:
 		hide_throbber()
 		cred_win.queue_free()
+		
+		if Global.project != null:
+			get_window().title = tr(&"%s - %s - Kiana") % [
+				Global.project.title,
+				Global.credentials.tester_name
+			]
 	)
 
 #endregion
