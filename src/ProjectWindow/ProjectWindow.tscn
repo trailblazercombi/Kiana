@@ -89,16 +89,10 @@ size_flags_horizontal = 3
 layout_mode = 2
 text = "Project Metrics will appear here."
 
-[node name="Right" type="VBoxContainer" parent="ContentTabs/Project/Vbox"]
+[node name="Right" type="HBoxContainer" parent="ContentTabs/Project/Vbox"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-
-[node name="CloseProject" type="Button" parent="ContentTabs/Project/Vbox/Right"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(180, 35)
-layout_mode = 2
-text = "◀ Close Project"
 
 [node name="Credentials" type="Button" parent="ContentTabs/Project/Vbox/Right"]
 unique_name_in_owner = true
@@ -106,6 +100,12 @@ custom_minimum_size = Vector2(180, 35)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Credentials..."
+
+[node name="CloseProject" type="Button" parent="ContentTabs/Project/Vbox/Right"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 35)
+layout_mode = 2
+text = "Close Project"
 
 [node name="Tests" type="MarginContainer" parent="ContentTabs"]
 visible = false

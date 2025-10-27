@@ -6,9 +6,13 @@ func _ready() -> void:
 	%ProjectName.text = Global.project.title
 	%ProjectDescription.text = Global.project.description
 	
-	if Global.project.tab_at_open == Project.Tab.TESTS:
-		%TabCheck.button_pressed = true
-		$ContentTabs/Tests.show()
+	match Global.project.tab_at_open:
+		Project.Tab.TESTS:
+			%TabCheck.button_pressed = true
+			$ContentTabs/Tests.show()
+		Project.Tab.PROJECT:
+			%TabCheck.button_pressed = false
+			$ContentTabs/Project.show()
 	
 	%CloseProject.button_down.connect(func() -> void:
 		get_tree().change_scene_to_file("res://src/ProjectSelect/ProjectSelect.tscn")
