@@ -3,6 +3,7 @@ class_name TestCaseResultViewer extends MarginContainer
 var found_results: Array[TestResult]
 
 func _ready() -> void:
+	hide()
 	Global.show_throbber(tr(&"Working..."))
 	
 	var dir := DirAccess.open(Global.project.folder)
@@ -43,7 +44,9 @@ func _ready() -> void:
 	)
 	
 	select_item(0)
+	
 	Global.hide_throbber()
+	show()
 
 func select_item(i: int) -> void:
 	Global.show_throbber(tr(&"Working..."))

@@ -24,9 +24,11 @@ var step_now: int = 0:
 				%StepNotEval.button_pressed = true
 
 func _ready() -> void:
+	hide()
+	Global.show_throbber(tr(&"Working..."))
+	
 	var case: TestCase = Global.selected_test_cases.pop_front()
 	if case == null:
-		Global.show_throbber(tr(&"Error..."))
 		Global.popup_error(
 			tr(&"No Test Case selected!"), func() -> void:
 				get_tree().change_scene_to_file(
@@ -83,6 +85,9 @@ func _ready() -> void:
 		%ProgressBar.add_child(inst)
 	
 	step_now = 0
+	
+	Global.hide_throbber()
+	show()
 
 func eval_step(eval: TestResult.StepStatus) -> void:
 	result.test_steps[step_now][&"step_status"] = eval

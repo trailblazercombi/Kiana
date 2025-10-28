@@ -4,6 +4,8 @@ var recent_entry: PackedScene = preload("res://src/ProjectSelect/RecentEntry.tsc
 
 func _ready() -> void:
 	get_window().title = tr(&"Kiana")
+	hide()
+	Global.show_throbber(tr(&"Working..."))
 	
 	%Create.button_down.connect(func() -> void:
 		if await Global.create_project():
@@ -21,6 +23,9 @@ func _ready() -> void:
 	
 	Global.refresh_data.connect(refresh_recents)
 	refresh_recents()
+	
+	Global.hide_throbber()
+	show()
 
 func refresh_recents() -> void:
 	for child in %Recents.get_children():

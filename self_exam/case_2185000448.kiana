@@ -1,0 +1,39 @@
+{
+	"description": "This test case validates the core testing workflow of the test management software: creating a test case, executing it, entering results, and marking the execution as passed. Its purpose is to confirm that the testing software’s basic functionality is operational.\n\nPreconditions\nThe testing application is installed and accessible.\nThe tester is logged in with permissions to create and execute test cases.\n\nExpected Overall Result\nThe test management software successfully allows creation, execution, and result logging of a test case, confirming that its basic test functionality operates correctly.",
+	"mime": "case.kiana",
+	"test_steps": [
+		{
+			"step_action": "Navigate to the Test Cases section.",
+			"step_expect": "The system displays a list of existing test cases (or an empty list if none exist)."
+		},
+		{
+			"step_action": "Click \"Add Test Case\".",
+			"step_expect": "A new test case creation form appears."
+		},
+		{
+			"step_action": "Enter a sample title into the field labeled \"Test Case\", e.g. \"Sample Test Case for System Verification\".",
+			"step_expect": "The title field accepts the input without errors."
+		},
+		{
+			"step_action": "Add a brief description, e.g. “This test case is used to verify that the testing system works correctly.”",
+			"step_expect": "The description field accepts the input successfully."
+		},
+		{
+			"step_action": "Save the new test case.",
+			"step_expect": "The test case appears in the test case list with the entered title and description."
+		},
+		{
+			"step_action": "Open the created test case and click Execute / Run Test.",
+			"step_expect": "The execution screen opens, showing an empty Testing window (no test steps were added)."
+		},
+		{
+			"step_action": "Select a result (e.g. Pass) and save the execution.",
+			"step_expect": "The system records the execution as “Passed” and updates the test case status accordingly."
+		},
+		{
+			"step_action": "Return to the test case list by pressing \"End Testing\".",
+			"step_expect": "The created test case is listed with its status shown as “Passed”."
+		}
+	],
+	"title": "Verify testing functionality"
+}

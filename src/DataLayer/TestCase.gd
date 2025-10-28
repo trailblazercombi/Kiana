@@ -54,11 +54,29 @@ func _init(the_file_name: StringName) -> void:
 func get_all_steps() -> Array:
 	return test_steps
 
-func save_to_disk() -> void:
+func save_to_disk() -> bool:
+	if kiana_file[&"test_steps"].is_empty():
+		Global.popup_error(
+			tr(&"Cannot save Test Case: %s") % 
+			tr(&"No Test Steps defined"),
+			func() -> void: pass
+		)
+		return false
+	
+	if not kiana_file.has(&"title"):
+		Global.popup_error(
+			tr(&"Cannot save Test Case: %s") % 
+			tr(&"Case has no Title"),
+			func() -> void: pass
+		)
+		return false
+	
 	var file := FileAccess.open(full_file_path(), FileAccess.WRITE)
 	file.store_string(JSON.stringify(kiana_file, &"\t"))
 	file.close()
+		
 	Global.refresh_data.emit()
+	return true
 
 func move_to_trash() -> void:
 	OS.move_to_trash(full_file_path())

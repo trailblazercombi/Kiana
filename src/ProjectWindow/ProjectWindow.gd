@@ -3,6 +3,9 @@ class_name ProjectWindow extends Container
 var preload_tce: PackedScene = preload("res://src/ProjectWindow/TestCaseEntry.tscn")
 
 func _ready() -> void:
+	hide()
+	Global.show_throbber(tr(&"Working..."))
+	
 	%ProjectName.text = Global.project.title
 	%ProjectDescription.text = Global.project.description
 	
@@ -54,9 +57,11 @@ func _ready() -> void:
 	collect_test_cases()
 	
 	Global.selected_test_cases.clear()
+	Global.hide_throbber()
+	show()
 
 func collect_test_cases() -> void:
-	Global.show_throbber(&"Working...")
+	Global.show_throbber(tr(&"Working..."))
 	for child in %TestCaseList.get_children():
 		child.queue_free()
 	for test_case: TestCase in Global.project.get_test_cases():

@@ -5,6 +5,9 @@ var preload_tse: PackedScene = preload("res://src/TestCaseEditor/TestStepEntry.t
 var test_case: TestCase
 
 func _ready() -> void:
+	hide()
+	Global.show_throbber(tr(&"Working..."))
+	
 	test_case = TestCase.new(Global.last_known_test_case_edit_path)
 	
 	%TestCaseName.text = test_case.title
@@ -47,9 +50,12 @@ func _ready() -> void:
 	
 	%Save.button_down.connect(func() -> void:
 		test_case.test_steps = _compile_steps()
-		test_case.save_to_disk()
-		get_tree().change_scene_to_file("res://src/ProjectWindow/ProjectWindow.tscn")
+		if test_case.save_to_disk():
+			get_tree().change_scene_to_file("res://src/ProjectWindow/ProjectWindow.tscn")
 	)
+	
+	Global.hide_throbber()
+	show()
 
 func _compile_steps() -> Array[Dictionary]:
 	var result: Array[Dictionary] = []
