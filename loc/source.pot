@@ -1,0 +1,814 @@
+# LANGUAGE translation for Kiana for the following files:
+# res://src/CredentialsWindow/CredentialsWindow.gd
+# res://src/CredentialsWindow/CredentialsWindow.tscn
+# res://src/DataLayer/Credentials.gd
+# res://src/DataLayer/Global.gd
+# res://src/DataLayer/Project.gd
+# res://src/DataLayer/TestCase.gd
+# res://src/DataLayer/TestResult.gd
+# res://src/ProjectSelect/ProjectSelect.gd
+# res://src/ProjectSelect/ProjectSelect.tscn
+# res://src/ProjectSelect/RecentEntry.gd
+# res://src/ProjectSelect/RecentEntry.tscn
+# res://src/ProjectWindow/ProjectWindow.gd
+# res://src/ProjectWindow/ProjectWindow.tscn
+# res://src/ProjectWindow/TestCaseEntry.gd
+# res://src/ProjectWindow/TestCaseEntry.tscn
+# res://src/TestCaseEditor/StepCreateWindow.gd
+# res://src/TestCaseEditor/StepCreateWindow.tscn
+# res://src/TestCaseEditor/TestCaseEditor.gd
+# res://src/TestCaseEditor/TestCaseEditor.tscn
+# res://src/TestCaseEditor/TestStepEntry.gd
+# res://src/TestCaseEditor/TestStepEntry.tscn
+# res://src/TestCaseResultViewer/TestCaseResultViewer.gd
+# res://src/TestCaseResultViewer/TestCaseResultViewer.tscn
+# res://src/TestCaseResultViewer/TestResultStepEntry.gd
+# res://src/TestCaseResultViewer/TestResultStepEntry.tscn
+# res://src/TestCaseWindow/TestCaseWindow.gd
+# res://src/TestCaseWindow/TestCaseWindow.tscn
+# res://src/TestCaseWindow/TestStepResult.gd
+# res://src/TestCaseWindow/TestStepResult.tscn
+# res://src/ThrobberOverlay/ThrobberOverlay.gd
+# res://src/ThrobberOverlay/ThrobberOverlay.tscn
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kiana\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: src/CredentialsWindow/CredentialsWindow.tscn
+msgid "Credentials"
+msgstr ""
+
+#: src/CredentialsWindow/CredentialsWindow.tscn
+msgid "Tester's Name"
+msgstr ""
+
+#: src/CredentialsWindow/CredentialsWindow.tscn
+msgid "System Info"
+msgstr ""
+
+#: src/CredentialsWindow/CredentialsWindow.tscn
+#: src/TestCaseEditor/StepCreateWindow.tscn
+#: src/TestCaseEditor/TestCaseEditor.tscn
+msgid "Cancel"
+msgstr ""
+
+#: src/CredentialsWindow/CredentialsWindow.tscn
+#: src/TestCaseEditor/StepCreateWindow.tscn
+#: src/TestCaseEditor/TestCaseEditor.tscn
+msgid "Save\n"
+msgstr ""
+
+#: src/DataLayer/Global.gd
+#: src/ProjectSelect/ProjectSelect.gd
+msgid "Kiana"
+msgstr ""
+
+#: src/DataLayer/Global.gd
+#: src/ProjectWindow/ProjectWindow.gd
+msgid "%s - %s - Kiana"
+msgstr ""
+
+#: src/DataLayer/Global.gd
+msgid "Opening project..."
+msgstr ""
+
+#: src/DataLayer/Global.gd
+msgid "Creating project..."
+msgstr ""
+
+#: src/DataLayer/Global.gd
+msgid "Editing credentials..."
+msgstr ""
+
+#: src/DataLayer/Project.gd
+msgid "This project is corrupted."
+msgstr ""
+
+#: src/DataLayer/TestCase.gd
+msgid "Test Case does not exist."
+msgstr ""
+
+#: src/DataLayer/TestCase.gd
+msgid "Cannot save Test Case: %s"
+msgstr ""
+
+#: src/DataLayer/TestCase.gd
+msgid "No Test Steps defined"
+msgstr ""
+
+#: src/DataLayer/TestCase.gd
+msgid "Case has no Title"
+msgstr ""
+
+#: src/DataLayer/TestResult.gd
+msgid "This is invalid. It may be corrupted or a different type."
+msgstr ""
+
+#: src/DataLayer/TestResult.gd
+msgid "%s does not exist."
+msgstr ""
+
+#: src/ProjectSelect/ProjectSelect.gd
+#: src/ProjectWindow/ProjectWindow.gd
+#: src/TestCaseEditor/TestCaseEditor.gd
+#: src/TestCaseResultViewer/TestCaseResultViewer.gd
+#: src/TestCaseWindow/TestCaseWindow.gd
+#: src/ThrobberOverlay/ThrobberOverlay.tscn
+msgid "Working..."
+msgstr ""
+
+#: src/ProjectSelect/ProjectSelect.tscn
+msgid "New Project"
+msgstr ""
+
+#: src/ProjectSelect/ProjectSelect.tscn
+msgid "Load Project"
+msgstr ""
+
+#: src/ProjectSelect/ProjectSelect.tscn
+#: src/ProjectWindow/ProjectWindow.tscn
+msgid "Credentials..."
+msgstr ""
+
+#: src/ProjectSelect/RecentEntry.tscn
+msgid "<name>"
+msgstr ""
+
+#: src/ProjectSelect/RecentEntry.tscn
+msgid "Load"
+msgstr ""
+
+#: src/ProjectSelect/RecentEntry.tscn
+msgid "×"
+msgstr ""
+
+#: src/ProjectSelect/RecentEntry.tscn
+msgid "<full project path>"
+msgstr ""
+
+#: src/ProjectSelect/RecentEntry.tscn
+msgid "<description>"
+msgstr ""
+
+#: src/ProjectWindow/ProjectWindow.tscn
+msgid "Project"
+msgstr ""
+
+#: src/ProjectWindow/ProjectWindow.tscn
+msgid "Project Name"
+msgstr ""
+
+#: src/ProjectWindow/ProjectWindow.tscn
+#: src/TestCaseEditor/TestCaseEditor.tscn
+msgid "Description"
+msgstr ""
+
+#: src/ProjectWindow/ProjectWindow.tscn
+msgid "Next time, open the project on \"Tests\" tab"
+msgstr ""
+
+#: src/ProjectWindow/ProjectWindow.tscn
+msgid "Metrics"
+msgstr ""
+
+#: src/ProjectWindow/ProjectWindow.tscn
+msgid "Project Metrics will appear here."
+msgstr ""
+
+#: src/ProjectWindow/ProjectWindow.tscn
+msgid "Close Project"
+msgstr ""
+
+#: src/ProjectWindow/ProjectWindow.tscn
+msgid "Tests"
+msgstr ""
+
+#: src/ProjectWindow/ProjectWindow.tscn
+msgid "Add Test Case..."
+msgstr ""
+
+#: src/ProjectWindow/ProjectWindow.tscn
+msgid "Begin Testing!"
+msgstr ""
+
+#: src/ProjectWindow/TestCaseEntry.tscn
+msgid "Name of the Test Case"
+msgstr ""
+
+#: src/ProjectWindow/TestCaseEntry.tscn
+msgid "Results"
+msgstr ""
+
+#: src/ProjectWindow/TestCaseEntry.tscn
+#: src/TestCaseEditor/TestStepEntry.tscn
+msgid "Edit"
+msgstr ""
+
+#: src/ProjectWindow/TestCaseEntry.tscn
+#: src/TestCaseEditor/TestStepEntry.tscn
+msgid "Delete"
+msgstr ""
+
+#: src/ProjectWindow/TestCaseEntry.tscn
+msgid "Description of the Test Case. This description can be extremely long. It will however get truncated  Description Description of the Test Case. This description can be extremely long. It will however get truncated  Description Description of the Test Case. This description can be extremely long. It will however get truncated  Description Description of the Test Case. This description can be extremely long. It will however get truncated  Description Description of the Test Case. This description can be extremely long. It will however get truncated  Description Description of the Test Case. This description can be extremely long. It will however get truncated  Description Description of the Test Case. This description can be extremely long. It will however get truncated  Description Description of the Test Case. This description can be extremely long. It will however get truncated  Description Description of the Test Case. This description can be extremely long. It will however get truncated  Description Description of the Test Case. This description can be extremely long. It will however get truncated  Description"
+msgstr ""
+
+#: src/TestCaseEditor/StepCreateWindow.tscn
+msgid "Test Case Step"
+msgstr ""
+
+#: src/TestCaseEditor/StepCreateWindow.tscn
+#: src/TestCaseResultViewer/TestResultStepEntry.tscn
+msgid "Action"
+msgstr ""
+
+#: src/TestCaseEditor/StepCreateWindow.tscn
+#: src/TestCaseResultViewer/TestResultStepEntry.tscn
+msgid ""
+"Expected\n"
+"Result"
+msgstr ""
+
+#: src/TestCaseEditor/TestCaseEditor.tscn
+msgid "Test Case"
+msgstr ""
+
+#: src/TestCaseEditor/TestCaseEditor.tscn
+msgid "Steps"
+msgstr ""
+
+#: src/TestCaseEditor/TestCaseEditor.tscn
+msgid "Add Step"
+msgstr ""
+
+#: src/TestCaseEditor/TestStepEntry.gd
+#: src/TestCaseEditor/TestStepEntry.tscn
+msgid "%d."
+msgstr ""
+
+#: src/TestCaseEditor/TestStepEntry.tscn
+msgid "Action. Action. Action. Action. Action. Action. Action. Action. Action. Action. Action. Action. Action. Action. Action. Action. Action. Action. Action. Action. Action. "
+msgstr ""
+
+#: src/TestCaseEditor/TestStepEntry.tscn
+msgid ""
+"Expected\n"
+"Result:"
+msgstr ""
+
+#: src/TestCaseEditor/TestStepEntry.tscn
+msgid "Expectations. Expectations. Expectations. Expectations. Expectations. Expectations. Expectations. Expectations. Expectations. Expectations. Expectations. Expectations. Expectations. Expectations. "
+msgstr ""
+
+#: src/TestCaseEditor/TestStepEntry.tscn
+msgid "▲"
+msgstr ""
+
+#: src/TestCaseEditor/TestStepEntry.tscn
+msgid "▼"
+msgstr ""
+
+#: src/TestCaseResultViewer/TestCaseResultViewer.gd
+msgid "%s: %s @ %s"
+msgstr ""
+
+#: src/TestCaseResultViewer/TestCaseResultViewer.tscn
+msgid "◀ Tests"
+msgstr ""
+
+#: src/TestCaseResultViewer/TestCaseResultViewer.tscn
+msgid "<test case name>"
+msgstr ""
+
+#: src/TestCaseResultViewer/TestCaseResultViewer.tscn
+msgid "<test case description>"
+msgstr ""
+
+#: src/TestCaseResultViewer/TestCaseResultViewer.tscn
+msgid "Tested System Configuration"
+msgstr ""
+
+#: src/TestCaseResultViewer/TestResultStepEntry.tscn
+msgid "✅ Step <number> <passed>"
+msgstr ""
+
+#: src/TestCaseResultViewer/TestResultStepEntry.tscn
+msgid "<action>"
+msgstr ""
+
+#: src/TestCaseResultViewer/TestResultStepEntry.tscn
+msgid ""
+"Actual\n"
+"Result"
+msgstr ""
+
+#: src/TestCaseWindow/TestCaseWindow.gd
+msgid "Step %d out of %d"
+msgstr ""
+
+#: src/TestCaseWindow/TestCaseWindow.gd
+msgid "No Test Case selected!"
+msgstr ""
+
+#: src/TestCaseWindow/TestCaseWindow.tscn
+msgid "Test Case: <test case name>"
+msgstr ""
+
+#: src/TestCaseWindow/TestCaseWindow.tscn
+msgid "<time> elapsed"
+msgstr ""
+
+#: src/TestCaseWindow/TestCaseWindow.tscn
+msgid "End Testing"
+msgstr ""
+
+#: src/TestCaseWindow/TestCaseWindow.tscn
+msgid "Next Case"
+msgstr ""
+
+#: src/TestCaseWindow/TestCaseWindow.tscn
+msgid "Action:"
+msgstr ""
+
+#: src/TestCaseWindow/TestCaseWindow.tscn
+msgid "<step contents>"
+msgstr ""
+
+#: src/TestCaseWindow/TestCaseWindow.tscn
+msgid "Expected result:"
+msgstr ""
+
+#: src/TestCaseWindow/TestCaseWindow.tscn
+msgid "<step expectation>"
+msgstr ""
+
+#: src/TestCaseWindow/TestCaseWindow.tscn
+msgid "Actual result:"
+msgstr ""
+
+#: src/TestCaseWindow/TestCaseWindow.tscn
+msgid "Not Evaluated"
+msgstr ""
+
+#: src/TestCaseWindow/TestCaseWindow.tscn
+msgid "Fail"
+msgstr ""
+
+#: src/TestCaseWindow/TestCaseWindow.tscn
+msgid "Pass"
+msgstr ""
+
+#: src/TestCaseWindow/TestCaseWindow.tscn
+msgid "◀"
+msgstr ""
+
+#: src/TestCaseWindow/TestCaseWindow.tscn
+msgid "Step <i> of <n>"
+msgstr ""
+
+#: src/TestCaseWindow/TestCaseWindow.tscn
+msgid "▶"
+msgstr ""
+
+#: src/TestCaseWindow/TestStepResult.tscn
+msgid "TR"
+msgstr ""
+
+msgid "All Recognized"
+msgstr ""
+
+msgid "New Code Region"
+msgstr ""
+
+msgid "Linear"
+msgstr ""
+
+msgid "Pick a color from the screen."
+msgstr ""
+
+msgid "Pick a color from the application window."
+msgstr ""
+
+msgid "Alpha"
+msgstr ""
+
+msgid "Intensity"
+msgstr ""
+
+msgid "Expr"
+msgstr ""
+
+msgid "Hex"
+msgstr ""
+
+msgid "Enter a hex code (\"#ff0000\") or named color (\"red\")."
+msgstr ""
+
+msgid "Load Color Palette"
+msgstr ""
+
+msgid "Save Color Palette"
+msgstr ""
+
+msgid "The changes to this palette have not been saved to a file."
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Save the current color palette to reuse later."
+msgstr ""
+
+msgid "Save As"
+msgstr ""
+
+msgid "Save the current color palette as a new to reuse later."
+msgstr ""
+
+msgid "Load existing color palette."
+msgstr ""
+
+msgid "Clear"
+msgstr ""
+
+msgid "Clear the currently loaded color palettes in the picker."
+msgstr ""
+
+msgid "Pick"
+msgstr ""
+
+msgid "Select a picker shape."
+msgstr ""
+
+msgid "Select a picker mode."
+msgstr ""
+
+msgid "Colorized Sliders"
+msgstr ""
+
+msgid "Hexadecimal Values"
+msgstr ""
+
+msgid "Hex code or named color"
+msgstr ""
+
+msgid "Swatches"
+msgstr ""
+
+msgid "Show all options available."
+msgstr ""
+
+msgid "Recent Colors"
+msgstr ""
+
+msgid "Add current color as a preset."
+msgstr ""
+
+msgid "Screen Recording permission missing!"
+msgstr ""
+
+msgid ""
+"Screen Recording permission is required to pick colors from the other application windows.\n"
+"Click here to request access..."
+msgstr ""
+
+msgid ""
+"Color: %s\n"
+"LMB: Apply color"
+msgstr ""
+
+msgid ""
+"Color: %s\n"
+"LMB: Apply color\n"
+"RMB: Remove preset"
+msgstr ""
+
+msgid "Color: %s"
+msgstr ""
+
+msgid "HSV Rectangle"
+msgstr ""
+
+msgid "OK HS Rectangle"
+msgstr ""
+
+msgid "OK HL Rectangle"
+msgstr ""
+
+msgid "HSV Wheel"
+msgstr ""
+
+msgid "VHS Circle"
+msgstr ""
+
+msgid "OKHSL Circle"
+msgstr ""
+
+msgid "OK"
+msgstr ""
+
+msgid "Alert!"
+msgstr ""
+
+msgid "Please Confirm..."
+msgstr ""
+
+msgid "Network"
+msgstr ""
+
+msgid ""
+"File \"%s\" already exists.\n"
+"Do you want to overwrite it?"
+msgstr ""
+
+msgid "Open"
+msgstr ""
+
+msgid "Select Current Folder"
+msgstr ""
+
+msgid "Select This Folder"
+msgstr ""
+
+msgid "Open in File Manager"
+msgstr ""
+
+msgid "Show Package Contents"
+msgstr ""
+
+msgid "You don't have permission to access contents of this folder."
+msgstr ""
+
+msgid "All Files"
+msgstr ""
+
+msgid "Open a File"
+msgstr ""
+
+msgid "Open File(s)"
+msgstr ""
+
+msgid "Open a Directory"
+msgstr ""
+
+msgid "Open a File or Directory"
+msgstr ""
+
+msgid "Save a File"
+msgstr ""
+
+msgid "Go to previous folder."
+msgstr ""
+
+msgid "Go to next folder."
+msgstr ""
+
+msgid "Go to parent folder."
+msgstr ""
+
+msgid "Path:"
+msgstr ""
+
+msgid "Drive"
+msgstr ""
+
+msgid "Refresh files."
+msgstr ""
+
+msgid "(Un)favorite current folder."
+msgstr ""
+
+msgid "Create a new folder."
+msgstr ""
+
+msgid "Favorites:"
+msgstr ""
+
+msgid "Recent:"
+msgstr ""
+
+msgid "Directories & Files:"
+msgstr ""
+
+msgid "Toggle the visibility of hidden files."
+msgstr ""
+
+msgid "View items as a grid of thumbnails."
+msgstr ""
+
+msgid "View items as a list."
+msgstr ""
+
+msgid "Toggle the visibility of the filter for file names."
+msgstr ""
+
+msgid "Sort files"
+msgstr ""
+
+msgid "Sort by Name (Ascending)"
+msgstr ""
+
+msgid "Sort by Name (Descending)"
+msgstr ""
+
+msgid "Sort by Type (Ascending)"
+msgstr ""
+
+msgid "Sort by Type (Descending)"
+msgstr ""
+
+msgid "Sort by Modified Time (Newest First)"
+msgstr ""
+
+msgid "Sort by Modified Time (Oldest First)"
+msgstr ""
+
+msgid "Filter:"
+msgstr ""
+
+msgid "Filename Filter:"
+msgstr ""
+
+msgid "File:"
+msgstr ""
+
+msgid "Create Folder"
+msgstr ""
+
+msgid "Name:"
+msgstr ""
+
+msgid "Could not create folder."
+msgstr ""
+
+msgid "Invalid extension, or empty filename."
+msgstr ""
+
+msgid "connection to %s (%s) port %d"
+msgstr ""
+
+msgid "connection from %s (%s) port %d"
+msgstr ""
+
+msgid "Zoom Out"
+msgstr ""
+
+msgid "Zoom Reset"
+msgstr ""
+
+msgid "Zoom In"
+msgstr ""
+
+msgid "Toggle the visual grid."
+msgstr ""
+
+msgid "Toggle snapping to the grid."
+msgstr ""
+
+msgid "Change the snapping distance."
+msgstr ""
+
+msgid "Toggle the graph minimap."
+msgstr ""
+
+msgid "Automatically arrange selected nodes."
+msgstr ""
+
+msgid "graph node %s (%s)"
+msgstr ""
+
+msgid "slot %d of %d"
+msgstr ""
+
+msgid "input port, type: %s"
+msgstr ""
+
+msgid "input port, type: %d"
+msgstr ""
+
+msgid "no connections"
+msgstr ""
+
+msgid "output port, type: %s"
+msgstr ""
+
+msgid "output port, type: %d"
+msgstr ""
+
+msgid "currently selecting target port"
+msgstr ""
+
+msgid "has %d slots"
+msgstr ""
+
+msgid "Edit Input Port Connection"
+msgstr ""
+
+msgid "Edit Output Port Connection"
+msgstr ""
+
+msgid "Follow Input Port Connection"
+msgstr ""
+
+msgid "Follow Output Port Connection"
+msgstr ""
+
+msgid ", in slot %d of graph node %s (%s)"
+msgstr ""
+
+msgid "Same as Layout Direction"
+msgstr ""
+
+msgid "Auto-Detect Direction"
+msgstr ""
+
+msgid "Left-to-Right"
+msgstr ""
+
+msgid "Right-to-Left"
+msgstr ""
+
+msgid "Left-to-Right Mark (LRM)"
+msgstr ""
+
+msgid "Right-to-Left Mark (RLM)"
+msgstr ""
+
+msgid "Start of Left-to-Right Embedding (LRE)"
+msgstr ""
+
+msgid "Start of Right-to-Left Embedding (RLE)"
+msgstr ""
+
+msgid "Start of Left-to-Right Override (LRO)"
+msgstr ""
+
+msgid "Start of Right-to-Left Override (RLO)"
+msgstr ""
+
+msgid "Pop Direction Formatting (PDF)"
+msgstr ""
+
+msgid "Arabic Letter Mark (ALM)"
+msgstr ""
+
+msgid "Left-to-Right Isolate (LRI)"
+msgstr ""
+
+msgid "Right-to-Left Isolate (RLI)"
+msgstr ""
+
+msgid "First Strong Isolate (FSI)"
+msgstr ""
+
+msgid "Pop Direction Isolate (PDI)"
+msgstr ""
+
+msgid "Zero-Width Joiner (ZWJ)"
+msgstr ""
+
+msgid "Zero-Width Non-Joiner (ZWNJ)"
+msgstr ""
+
+msgid "Word Joiner (WJ)"
+msgstr ""
+
+msgid "Soft Hyphen (SHY)"
+msgstr ""
+
+msgid "Emoji & Symbols"
+msgstr ""
+
+msgid "Cut"
+msgstr ""
+
+msgid "Copy"
+msgstr ""
+
+msgid "Paste"
+msgstr ""
+
+msgid "Select All"
+msgstr ""
+
+msgid "Undo"
+msgstr ""
+
+msgid "Redo"
+msgstr ""
+
+msgid "Text Writing Direction"
+msgstr ""
+
+msgid "Display Control Characters"
+msgstr ""
+
+msgid "Insert Control Character"
+msgstr ""

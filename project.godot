@@ -12,7 +12,9 @@ config_version=5
 
 config/name="Kiana"
 run/main_scene="uid://dhbfjbj3srg1o"
+run/enable_alt_space_menu=true
 config/features=PackedStringArray("4.5", "GL Compatibility")
+run/low_processor_mode=true
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/image="uid://kr6k8fpyiipg"
@@ -33,3 +35,9 @@ folder_colors={
 "res://debug_data/": "pink",
 "res://src/DataLayer/": "teal"
 }
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://loc/sk_SK.po")
+locale/translations_pot_files=PackedStringArray("res://src/CredentialsWindow/CredentialsWindow.gd", "res://src/CredentialsWindow/CredentialsWindow.tscn", "res://src/DataLayer/Credentials.gd", "res://src/DataLayer/Global.gd", "res://src/DataLayer/Project.gd", "res://src/DataLayer/TestCase.gd", "res://src/DataLayer/TestResult.gd", "res://src/ProjectSelect/ProjectSelect.gd", "res://src/ProjectSelect/ProjectSelect.tscn", "res://src/ProjectSelect/RecentEntry.gd", "res://src/ProjectSelect/RecentEntry.tscn", "res://src/ProjectWindow/ProjectWindow.gd", "res://src/ProjectWindow/ProjectWindow.tscn", "res://src/ProjectWindow/TestCaseEntry.gd", "res://src/ProjectWindow/TestCaseEntry.tscn", "res://src/TestCaseEditor/StepCreateWindow.gd", "res://src/TestCaseEditor/StepCreateWindow.tscn", "res://src/TestCaseEditor/TestCaseEditor.gd", "res://src/TestCaseEditor/TestCaseEditor.tscn", "res://src/TestCaseEditor/TestStepEntry.gd", "res://src/TestCaseEditor/TestStepEntry.tscn", "res://src/TestCaseResultViewer/TestCaseResultViewer.gd", "res://src/TestCaseResultViewer/TestCaseResultViewer.tscn", "res://src/TestCaseResultViewer/TestResultStepEntry.gd", "res://src/TestCaseResultViewer/TestResultStepEntry.tscn", "res://src/TestCaseWindow/TestCaseWindow.gd", "res://src/TestCaseWindow/TestCaseWindow.tscn", "res://src/TestCaseWindow/TestStepResult.gd", "res://src/TestCaseWindow/TestStepResult.tscn", "res://src/ThrobberOverlay/ThrobberOverlay.gd", "res://src/ThrobberOverlay/ThrobberOverlay.tscn")
+locale/translation_add_builtin_strings_to_pot=true

@@ -1,0 +1,83 @@
+{
+	"credentials": {
+		"recent_folders": [
+			"C:/Users/domuh/GitHub/Kiana/self_exam/project.kiana"
+		],
+		"system_info": "OS Name: Windows\nOS Version: 10.0.26200\nLocale: en_GB\nUnique ID: {f748be6d-7eca-11f0-963f-806e6f6e6963}\nCPU Name: 12th Gen Intel(R) Core(TM) i5-1235U\nCPU Count: 12\nStatic Memory Usage (MB): 95.3986577987671\nScreen Count: 1\nPrimary Screen Size: (1920, 1080)\nWindow Size: (1920, 991)\nGPU Name: Intel(R) Iris(R) Xe Graphics\nGPU Vendor: Unknown\nEngine Version: 4.5-stable (official)\nExecutable Path: C:/Users/domuh/AppData/Local/Microsoft/WinGet/Packages/Godot_v4.5-stable_win64.exe/Godot_v4.5-stable_win64.exe\nUser Data Dir: C:/Users/domuh/AppData/Roaming/Godot/app_userdata/Kiana\nEnvironment Vars: \nUSERNAME=domuh\nCOMPUTERNAME=ARIA\nAPPDATA=C:\\Users\\domuh\\AppData\\Roaming\nPATH=C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Vim\\vim91;C:\\Program Files\\Git\\cmd;C:\\Users\\domuh\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\domuh\\AppData\\Local\\Microsoft\\WinGet\\Links;C:\\Users\\domuh\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\domuh\\AppData\\Local\\JetBrains\\Toolbox\\scripts;C:\\Users\\domuh\\AppData\\Local\\PowerToys\\\nDisk Info: Free: 366699.90625 MB free (in C:/Users/domuh/AppData/Roaming/Godot/app_userdata/Kiana)\n",
+		"tester_name": "The Domčo"
+	},
+	"description": "This test case validates the core testing workflow of the test management software: creating a test case, executing it, entering results, and marking the execution as passed. Its purpose is to confirm that the testing software’s basic functionality is operational.\n\nPreconditions\nThe testing application is installed and accessible.\nThe tester is logged in with permissions to create and execute test cases.\n\nExpected Overall Result\nThe test management software successfully allows creation, execution, and result logging of a test case, confirming that its basic test functionality operates correctly.",
+	"mime": "result.kiana",
+	"overall_result": 2,
+	"start_time": {
+		"day": 28,
+		"dst": false,
+		"hour": 14,
+		"minute": 58,
+		"month": 10,
+		"second": 58,
+		"weekday": 2,
+		"year": 2025
+	},
+	"submit_time": {
+		"day": 28,
+		"dst": false,
+		"hour": 14,
+		"minute": 59,
+		"month": 10,
+		"second": 19,
+		"weekday": 2,
+		"year": 2025
+	},
+	"test_steps": [
+		{
+			"step_action": "Navigate to the Test Cases section.",
+			"step_actual": "",
+			"step_expect": "The system displays a list of existing test cases (or an empty list if none exist).",
+			"step_status": 2
+		},
+		{
+			"step_action": "Click \"Add Test Case\".",
+			"step_actual": "",
+			"step_expect": "A new test case creation form appears.",
+			"step_status": 0
+		},
+		{
+			"step_action": "Enter a sample title into the field labeled \"Test Case\", e.g. \"Sample Test Case for System Verification\".",
+			"step_actual": "",
+			"step_expect": "The title field accepts the input without errors.",
+			"step_status": 0
+		},
+		{
+			"step_action": "Add a brief description, e.g. “This test case is used to verify that the testing system works correctly.”",
+			"step_actual": "",
+			"step_expect": "The description field accepts the input successfully.",
+			"step_status": 0
+		},
+		{
+			"step_action": "Save the new test case.",
+			"step_actual": "",
+			"step_expect": "The test case appears in the test case list with the entered title and description.",
+			"step_status": 0
+		},
+		{
+			"step_action": "Open the created test case and click Execute / Run Test.",
+			"step_actual": "",
+			"step_expect": "The execution screen opens, showing an empty Testing window (no test steps were added).",
+			"step_status": 0
+		},
+		{
+			"step_action": "Select a result (e.g. Pass) and save the execution.",
+			"step_actual": "",
+			"step_expect": "The system records the execution as “Passed” and updates the test case status accordingly.",
+			"step_status": 0
+		},
+		{
+			"step_action": "Return to the test case list by pressing \"End Testing\".",
+			"step_actual": "",
+			"step_expect": "The created test case is listed with its status shown as “Passed”.",
+			"step_status": 0
+		}
+	],
+	"title": "Verify testing functionality"
+}
