@@ -19,6 +19,7 @@ enum Status {
 func _ready() -> void:
 	#TranslationServer.set_locale("sk")
 	
+	#get_window().sharp_corners = true
 	get_tree().root.theme = load("res://kiana_theme.tres")
 	get_tree().root.add_child.call_deferred(_throbber)
 	_throbber.z_index = 4090
