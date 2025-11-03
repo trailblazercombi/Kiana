@@ -17,3 +17,4 @@ mono_crash.*.json
 
 # Releases should not be caught
 out/*
+*.exe
